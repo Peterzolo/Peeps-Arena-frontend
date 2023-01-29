@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
-import '@components/input/Input.scss';
-import { forwardRef } from 'react';
+// import { forwardRef } from 'react';
+import '../../components/input/Input.scss';
 
-const Input = forwardRef((props, ref) => (
+// const Input = forwardRef((props, ref) => (
+const Input = (props) => (
   <div className="form-row">
     {props.labelText && (
       <label htmlFor={props.name} className="form-label">
@@ -10,7 +11,7 @@ const Input = forwardRef((props, ref) => (
       </label>
     )}
     <input
-      ref={ref}
+      // ref={ref}
       id={props.id}
       name={props.name}
       type={props.type}
@@ -25,7 +26,7 @@ const Input = forwardRef((props, ref) => (
       autoComplete="false"
     />
   </div>
-));
+);
 
 Input.propTypes = {
   name: PropTypes.string.isRequired,

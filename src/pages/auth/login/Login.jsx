@@ -1,14 +1,26 @@
 import './Login.scss';
-import React from 'react';
+import React, { useState } from 'react';
+import Input from '../../../components/input/Input';
+import Button from '../../../components/Button/Button';
+import { Link } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa';
+
+const loginUser = true;
 
 const Login = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [keepLoggedIn, setKeepLoggedIn] = useState(false);
+  const [loading] = useState(false);
+  const [hasError] = useState(false);
+  // const [errorMessage, setErrorMessage] = useState('');
   return (
     <div className="auth-inner">
-      {hasError && errorMessage && (
+      {/* {hasError && errorMessage && (
         <div className={`alerts ${alertType}`} role="alert">
           {errorMessage}
         </div>
-      )}
+      )} */}
       <form className="auth-form" onSubmit={loginUser}>
         <div className="form-input-container">
           <Input
