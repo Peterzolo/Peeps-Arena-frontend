@@ -28,7 +28,6 @@ const Login = () => {
             name="username"
             type="text"
             value={username}
-            labelText="Username"
             placeholder="Enter Username"
             style={{ border: `${hasError ? '1px solid #fa9b8a' : ''}` }}
             handleChange={(event) => setUsername(event.target.value)}
@@ -38,7 +37,6 @@ const Login = () => {
             name="password"
             type="password"
             value={password}
-            labelText="Password"
             placeholder="Enter Password"
             style={{ border: `${hasError ? '1px solid #fa9b8a' : ''}` }}
             handleChange={(event) => setPassword(event.target.value)}
