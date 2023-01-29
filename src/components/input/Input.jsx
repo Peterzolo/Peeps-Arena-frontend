@@ -22,3 +22,18 @@ const Input = forwardRef((props, ref) => (
     />
   </div>
 ));
+
+Input.propTypes = {
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  labelText: PropTypes.string,
+  value: PropTypes.any,
+  className: PropTypes.string,
+  placeholder: PropTypes.string,
+  handleChange: PropTypes.func,
+  onClick: PropTypes.func,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
+  style: PropTypes.object
+};
