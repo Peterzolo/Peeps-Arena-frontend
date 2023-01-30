@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import backgroundImage from '../../../assets/images/background1.jpg';
+// import backgroundImage from '../../../assets/images/background1.jpg';
 import Login from '../login/Login';
 import './authTab.scss';
 
@@ -11,7 +11,8 @@ const authTab = () => {
       {/* {keepLoggedIn ? (
         <PageLoader />
       ) : ( */}
-      <div className="container-wrapper" style={{ backgroundImage: `url(${backgroundImage})` }}>
+      {/* <div className="container-wrapper" style={{ backgroundImage: `url(${backgroundImage})` }}> */}
+      <div className="container-wrapper">
         <div className="environment"></div>
         <div className="container-wrapper-auth">
           <div className="tabs">
