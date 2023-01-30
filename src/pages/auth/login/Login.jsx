@@ -84,6 +84,17 @@ const Login = () => {
             style={{ border: `${hasError ? '1px solid #fa9b8a' : ''}` }}
             handleChange={(event) => setPassword(event.target.value)}
           />
+          <label className="checkmark-container" htmlFor="checkbox">
+            <Input
+              id="checkbox"
+              name="checkbox"
+              type="checkbox"
+              // value={keepLoggedIn}
+              // handleChange={() => setKeepLoggedIn(!keepLoggedIn)}
+            />
+            Keep me signed in
+          </label>
+
           <Button
             label="Login"
             // label={`${loading ? 'SIGNIN IN PROGRESS...' : 'SIGNIN'}`}
