@@ -10,6 +10,7 @@ const Input = (props) => (
         {props.labelText}
       </label>
     )}
+
     <input
       // ref={ref}
       id={props.id}
