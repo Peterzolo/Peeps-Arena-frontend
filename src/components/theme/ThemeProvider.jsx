@@ -1,7 +1,9 @@
 import { ThemeProvider } from 'styled-components';
 
 import React from 'react';
+import { themeStyles } from './theme';
 
-export const Theme = () => {
-  return <ThemeProvider></ThemeProvider>;
+// eslint-disable-next-line react/prop-types
+export const Theme = ({ children }) => {
+  return <ThemeProvider theme={themeStyles}>{children}</ThemeProvider>;
 };

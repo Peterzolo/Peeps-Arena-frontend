@@ -1,13 +1,16 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { Theme } from './components/theme/ThemeProvider';
 import { AppRouter } from './routes';
 
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <AppRouter />
-      </BrowserRouter>
+      <Theme>
+        <BrowserRouter>
+          <AppRouter />
+        </BrowserRouter>
+      </Theme>
     </>
   );
 };

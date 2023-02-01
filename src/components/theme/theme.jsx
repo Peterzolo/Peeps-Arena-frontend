@@ -1,4 +1,4 @@
-const coolTheme = {
+export const themeStyles = {
   colors: {
     primary: '',
     secondary: '',
