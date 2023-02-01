@@ -1,12 +1,12 @@
 export const themeStyles = {
   colors: {
-    primary: '',
-    secondary: '',
-    lightGrey: '',
-    lightColor: ''
+    primary: '#722ed1',
+    secondary: '#9254de',
+    light: '#fafafa',
+    dark: '#595959'
   },
   backgroundColors: {
-    primaryBg: 'green',
+    primaryBg: '#722ed1',
     secondaryBg: '',
     bgImage: ''
   },

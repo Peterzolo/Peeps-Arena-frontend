@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import Card from '../../../components/card/Card';
 // import styled from 'styled-components';
 
 // const Box = styled.div`
@@ -9,7 +9,7 @@ import { Card } from 'react-bootstrap';
 // `;
 
 const Login = () => {
-  return <Card>New Card</Card>;
+  return <Card background-color="red">New Card</Card>;
 };
 
 export default Login;
