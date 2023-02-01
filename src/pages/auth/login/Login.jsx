@@ -1,23 +1,14 @@
 import React from 'react';
-import Card from '../../../components/card/Card';
-import Input from '../../../components/input/Input';
+import styled from 'styled-components';
 
-const header = 'Log In To Post';
+const Box = styled.div`
+  width: 300px;
+  height: 300px;
+  background-color: grey;
+`;
 
 const Login = () => {
-  return (
-    <div className="login-wrapper">
-      <Card
-        cardHeader={header}
-        input={
-          <div className="input-class">
-            <Input placeholder={'Username'} name="username" />
-            <Input placeholder={'Password'} name="password" />
-          </div>
-        }
-      />
-    </div>
-  );
+  return <Box>Hello</Box>;
 };
 
 export default Login;
