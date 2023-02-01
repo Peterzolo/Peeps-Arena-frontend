@@ -1,19 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import './Card.scss';
 
-const Card = (props) => {
+export const Card = (props) => {
   // eslint-disable-next-line react/prop-types
-  const { cardHeader, cardBody, input } = props;
-  return (
-    <div className="card-wrap">
-      {cardHeader && <div className="header">{cardHeader}</div>}
-
-      {cardBody && <div>{cardBody}</div>}
-
-      {input && <div className="inputwrap">{input}</div>}
-    </div>
-  );
+  const { children, ...rest } = props;
+  // eslint-disable-next-line react/jsx-no-undef
+  return <Components {...rest}>{children}</Components>;
 };
+
+const Components = styled.div``;
 
 export default Card;

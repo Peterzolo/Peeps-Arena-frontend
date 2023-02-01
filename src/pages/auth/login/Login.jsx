@@ -1,14 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Card } from 'react-bootstrap';
+// import styled from 'styled-components';
 
-const Box = styled.div`
-  width: 300px;
-  height: 300px;
-  background-color: grey;
-`;
+// const Box = styled.div`
+//   width: 300px;
+//   height: 300px;
+//   background-color: ${(props) => props.theme.backgroundColors.primaryBg};
+// `;
 
 const Login = () => {
-  return <Box>Hello</Box>;
+  return <Card>New Card</Card>;
 };
 
 export default Login;

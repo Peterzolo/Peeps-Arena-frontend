@@ -6,7 +6,7 @@ export const themeStyles = {
     lightColor: ''
   },
   backgroundColors: {
-    primaryBg: '',
+    primaryBg: 'green',
     secondaryBg: '',
     bgImage: ''
   },
