@@ -15,7 +15,7 @@ export const themeStyles = {
     small: '16px',
     medium: '20px',
     large: '25px',
-    xLarge: '50px'
+    xLarge: '30px'
   },
   fontStyle: {},
   fontWeight: {},
@@ -35,11 +35,12 @@ export const themeStyles = {
   },
   fontWeights: {
     light: 100,
+    light2: 200,
     normal: 300,
     bold1: 500,
     bold: 'bold'
   },
   border: {
-    rounded: '10px'
+    rounded: '5px'
   }
 };
