@@ -9,7 +9,7 @@ import Card from '../../../components/card/Card';
 // `;
 
 const Login = () => {
-  return <Card background-color="red">New Card</Card>;
+  return <Card style={{ width: '600px', height: '500px', backgrounColor: 'red' }}>New Card</Card>;
 };
 
 export default Login;
