@@ -7,7 +7,7 @@ export const themeStyles = {
   },
   backgroundColors: {
     primaryBg: '#722ed1',
-    secondaryBg: '',
+    secondaryBg: '#ffffff',
     bgImage: ''
   },
   fontSize: {
@@ -22,12 +22,24 @@ export const themeStyles = {
   dimension: {},
   padding: {
     fullOne: '10px',
-    fullTwo: '20px'
+    fullTwo: '20px',
+    bottom: '30px',
+    top: '20px'
+  },
+  margin: {
+    fullOne: '10px',
+    fullTwo: '20px',
+    left: '5px',
+    right: '5px',
+    bottom: '20px'
   },
   fontWeights: {
     light: 100,
     normal: 300,
     bold1: 500,
     bold: 'bold'
+  },
+  border: {
+    rounded: '10px'
   }
 };

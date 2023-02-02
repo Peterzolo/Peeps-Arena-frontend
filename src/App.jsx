@@ -5,13 +5,13 @@ import { AppRouter } from './routes';
 
 const App = () => {
   return (
-    <>
+    <div style={{ backgroundColor: '#f0f0f0' }}>
       <Theme>
         <BrowserRouter>
           <AppRouter />
         </BrowserRouter>
       </Theme>
-    </>
+    </div>
   );
 };
 

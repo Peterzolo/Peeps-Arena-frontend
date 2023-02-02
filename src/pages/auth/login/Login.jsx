@@ -1,15 +1,22 @@
 import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import Card from '../../../components/card/Card';
-// import styled from 'styled-components';
-
-// const Box = styled.div`
-//   width: 300px;
-//   height: 300px;
-//   background-color: ${(props) => props.theme.backgroundColors.primaryBg};
-// `;
 
 const Login = () => {
-  return <Card style={{ width: '600px', height: '500px', backgrounColor: 'red' }}>New Card</Card>;
+  return (
+    <Container>
+      <Row>
+        <Col md={6}></Col>
+      </Row>
+      <Row>
+        <Col>
+          <Card md={6} style={{ width: '600px', height: '500px' }}>
+            Input
+          </Card>
+        </Col>
+      </Row>
+    </Container>
+  );
 };
 
 export default Login;
