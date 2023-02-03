@@ -1,12 +1,11 @@
 import { useRoutes } from 'react-router-dom';
-// import AuthTab from './pages/auth/authTab/authTab';
-import BlankSlate from './pages/auth/authTab/BlankSlate';
+import AuthTam from './pages/auth/auth-tab/AuthTam';
 
 export const AppRouter = () => {
   const elements = useRoutes([
     {
       path: '/',
-      element: <BlankSlate />
+      element: <AuthTam />
     }
   ]);
 

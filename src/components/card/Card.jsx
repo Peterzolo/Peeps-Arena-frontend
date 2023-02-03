@@ -8,10 +8,11 @@ export const Card = (props) => {
 };
 
 const Components = styled.div`
-  background-color: ${(props) => props.theme.backgroundColors.secondaryBg || 'auto'};
+  /* background-color: ${(props) => props.theme.backgroundColors.secondaryBg}; */
+  background-color: green;
   width: max-content;
   height: max-content;
-  color: ${(props) => props.theme.colors.light || 'auto'};
+  color: ${(props) => props.theme.colors.dark};
   padding: ${(props) => props.theme.padding.fullOne};
   margin-top: 20px;
   border-radius: ${(props) => props.theme.border.rounded};
