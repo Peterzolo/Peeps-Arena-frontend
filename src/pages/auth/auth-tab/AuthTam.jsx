@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 
+import '../auth-tab/AuthTab.scss';
+
 const AuthTam = () => {
   const [type, setType] = useState('Sign In');
   return (
-    <Container>
+    <Container className="main-wrapper">
       <Row className="row">
         <Col className="row">
           <div className="container-wrapper">
