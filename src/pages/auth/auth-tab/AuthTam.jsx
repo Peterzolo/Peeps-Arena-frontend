@@ -8,24 +8,19 @@ const AuthTam = () => {
   return (
     <Container className="main-wrapper">
       <Row className="row">
-        <Col className="row">
-          <div className="container-wrapper">
-            <div className="environment">Environment</div>
-            <div className="container-wrapper-auth">
-              <div className="tabs">
-                <div className="tabs-auth">
-                  <ul className="tab-group">
-                    <li className={`tab ${type === 'Sign In' ? 'active' : ''}`} onClick={() => setType('Sign In')}>
-                      <button className="login-btn">Sign In</button>
-                    </li>
-                    <li className={`tab ${type === 'Sign Up' ? 'active' : ''}`} onClick={() => setType('Sign Up')}>
-                      <button className="register-btn">Sign Up</button>
-                    </li>
-                  </ul>
-                  {type === 'Sign In' && <div className="tab-item">LOGIN</div>}
-                  {type === 'Sign Up' && <div className="tab-item">REGISTER</div>}
-                </div>
-              </div>
+        <Col className="row" md={12}>
+          <div className="tabs-auth">
+            <ul className="tab-group">
+              <li className={`tab ${type === 'Sign In' ? 'active' : ''}`} onClick={() => setType('Sign In')}>
+                <button className="login-btn">Sign In</button>
+              </li>
+              <li className={`tab ${type === 'Sign Up' ? 'active' : ''}`} onClick={() => setType('Sign Up')}>
+                <button className="register-btn">Sign Up</button>
+              </li>
+            </ul>
+            <div className="form-wrap">
+              {type === 'Sign In' && <div className="tab-item">LOGIN</div>}
+              {type === 'Sign Up' && <div className="tab-item">REGISTER</div>}
             </div>
           </div>
         </Col>
