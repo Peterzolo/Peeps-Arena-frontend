@@ -5,7 +5,7 @@ import '../auth-tab/AuthTab.scss';
 import { Login } from '../login/Login';
 import { Register } from '../register/Register';
 
-const AuthTam = () => {
+const AuthTab = () => {
   const [type, setType] = useState('Sign In');
   return (
     <Container className="main-wrapper">
@@ -39,4 +39,4 @@ const AuthTam = () => {
   );
 };
 
-export default AuthTam;
+export default AuthTab;
