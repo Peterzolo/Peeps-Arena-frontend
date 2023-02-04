@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '../../../components/Button/Button';
 import { Input } from '../../../components/input/Input';
 import './Login.scss';
 const hasError = false;
 const errorMessage = 'This is ewrror message';
+const loading = false;
 export const Login = () => {
   const [alertType] = useState('');
   // const [alertType, setAlertType] = useState('');
@@ -54,7 +57,18 @@ export const Login = () => {
             <div className="title">keep me logged in</div>
           </div>
         </div>
+        <Button
+          label={`${loading ? 'SIGNIN IN PROGRESS...' : 'SIGNIN'}`}
+          className="send-btn"
+          disabled={!username || !password}
+        />
       </form>
+      <div className="remarks-wrap">
+        <div className="remark-text">Not yet registered?</div>
+        <Link to={'/auth/register'} style={{ textDecoration: 'none', color: '#722ed1' }}>
+          Sign Up
+        </Link>
+      </div>
     </div>
   );
 };
