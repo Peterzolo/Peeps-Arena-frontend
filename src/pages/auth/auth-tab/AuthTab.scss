@@ -1,5 +1,6 @@
 .main-wrapper {
-  background-color: white;
+  background-color: rgb(225, 163, 163);
+  // background-color: white;
   margin-top: 150px;
   width: 600px;
   height: 500px;
@@ -32,7 +33,7 @@
           font-size: 18px;
           background-color: transparent;
           border: 1px solid var(--primary-1);
-          color: white;
+          color: var(--primary-1);
           border-radius: 5px;
         }
       }

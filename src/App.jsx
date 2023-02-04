@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Theme } from './components/theme/ThemeProvider';
 import { AppRouter } from './routes';
-
+import './App.scss';
 const App = () => {
   return (
-    <div style={{ backgroundColor: '#f0f0f0' }}>
+    <div>
       <Theme>
         <BrowserRouter>
           <AppRouter />
