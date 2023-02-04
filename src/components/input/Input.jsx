@@ -3,14 +3,8 @@ import PropTypes from 'prop-types';
 import '../../components/input/Input.scss';
 
 // const Input = forwardRef((props, ref) => (
-const Input = (props) => (
-  <div className="form-row">
-    {props.labelText && (
-      <label htmlFor={props.name} className="form-label">
-        {props.labelText}
-      </label>
-    )}
-
+export const Input = (props) => (
+  <div className="input-container">
     <input
       // ref={ref}
       id={props.id}
@@ -43,5 +37,3 @@ Input.propTypes = {
   onBlur: PropTypes.func,
   style: PropTypes.object
 };
-
-export default Input;
