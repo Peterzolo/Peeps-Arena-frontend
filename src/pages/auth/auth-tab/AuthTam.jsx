@@ -8,7 +8,7 @@ const AuthTam = () => {
   return (
     <Container className="main-wrapper">
       <Row className="row">
-        <Col className="row" md={12}>
+        <Col className="row" ms={12}>
           <div className="tabs-auth">
             <ul className="tab-group">
               <li className={`tab ${type === 'Sign In' ? 'active' : ''}`} onClick={() => setType('Sign In')}>
