@@ -10,7 +10,7 @@ export const Login = () => {
   const handleSubmit = () => {};
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [keepLoggedIn, setKeepLoggedIn] = useState('');
+  const [keepLoggedIn] = useState('');
   return (
     <div className="wrapper">
       {/* <h3 className="login-heading">Login</h3> */}
@@ -40,16 +40,18 @@ export const Login = () => {
             placeholder="Enter Username"
             handleChange={(event) => setPassword(event.target.value)}
           />
+          <hr />
+          <div className="forgot-password">Forgot Password?</div>
           <div className="check-box-wrap">
-            <div className="title">keep me logged in</div>
-            <Input
+            <input
               id="checkbox"
               name="checkbox"
               type="checkbox"
               value={keepLoggedIn}
               className="checkBox"
-              handleChange={() => setKeepLoggedIn(!keepLoggedIn)}
+              //  onChange={} handleChange={() => setKeepLoggedIn(!keepLoggedIn)}
             />
+            <div className="title">keep me logged in</div>
           </div>
         </div>
       </form>
