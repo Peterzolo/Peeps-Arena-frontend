@@ -13,6 +13,8 @@ export const Register = () => {
   const handleSubmit = () => {};
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   return (
     <div className="wrapper">
@@ -35,20 +37,39 @@ export const Register = () => {
             handleChange={(event) => setUsername(event.target.value)}
           />
           <Input
+            id="email"
+            name="email"
+            type="text"
+            value={email}
+            labelText="Email"
+            placeholder="Enter Email"
+            style={{ border: `${hasError ? '1px solid #fa9b8a' : ''}` }}
+            handleChange={(event) => setEmail(event.target.value)}
+          />
+          <Input
             id="password"
             name="password"
             type="password"
             value={password}
             labelText="Username"
-            placeholder="Enter Username"
+            placeholder="Enter Password"
             handleChange={(event) => setPassword(event.target.value)}
+          />
+          <Input
+            id="password"
+            name="confirmPassword"
+            type="password"
+            value={confirmPassword}
+            labelText="Username"
+            placeholder="Confirm Password"
+            handleChange={(event) => setConfirmPassword(event.target.value)}
           />
           <hr />
         </div>
         <Button
           label={`${loading ? 'SIGNIN IN PROGRESS...' : 'SIGN UP'}`}
           className="send-btn"
-          disabled={!username || !password}
+          disabled={!username || !email || !password || !confirmPassword}
         />
       </form>
       <div className="remarks-wrap">
