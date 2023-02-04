@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 
-const Button = (props) => {
+import './Card.scss';
+
+export const Card = (props) => {
   const { className, children } = props;
 
   return (
@@ -10,9 +12,7 @@ const Button = (props) => {
   );
 };
 
-Button.propTypes = {
+Card.propTypes = {
   children: PropTypes.any,
   className: PropTypes.string
 };
-
-export default Button;

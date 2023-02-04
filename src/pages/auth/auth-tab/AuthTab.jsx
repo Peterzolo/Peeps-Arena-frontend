@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Card } from '../../../components/card/Card';
 
 import '../auth-tab/AuthTab.scss';
 import { Login } from '../login/Login';
@@ -21,16 +22,18 @@ const AuthTab = () => {
               </li>
             </ul>
             <div className="form-wrap">
-              {type === 'Sign In' && (
-                <div className="tab-item">
-                  <Login />{' '}
-                </div>
-              )}
-              {type === 'Sign Up' && (
-                <div className="tab-item">
-                  <Register />
-                </div>
-              )}
+              <Card className="card-wrap">
+                {type === 'Sign In' && (
+                  <div className="tab-item">
+                    <Login />
+                  </div>
+                )}
+                {type === 'Sign Up' && (
+                  <div className="tab-item">
+                    <Register />
+                  </div>
+                )}
+              </Card>
             </div>
           </div>
         </Col>

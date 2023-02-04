@@ -1,3 +1,7 @@
 export const Login = () => {
-  return <div>Login Component</div>;
+  return (
+    <div className="wrapper">
+      <h3 className="login">Login</h3>
+    </div>
+  );
 };
