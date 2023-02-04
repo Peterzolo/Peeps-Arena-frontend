@@ -18,8 +18,6 @@ export const Register = () => {
 
   return (
     <div className="wrapper">
-      {/* <h3 className="login-heading">Login</h3> */}
-
       {hasError && errorMessage && (
         <div className={`alerts ${alertType}`} role="alert">
           {errorMessage}

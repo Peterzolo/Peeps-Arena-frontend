@@ -8,7 +8,6 @@ const errorMessage = 'This is ewrror message';
 const loading = false;
 export const Login = () => {
   const [alertType] = useState('');
-  // const [alertType, setAlertType] = useState('');
 
   const handleSubmit = () => {};
   const [username, setUsername] = useState('');
