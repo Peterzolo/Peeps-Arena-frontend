@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 // import { forwardRef } from 'react';
 import '../../components/input/Input.scss';
 
-// const Input = forwardRef((props, ref) => (
 export const Input = (props) => (
   <div className="input-container">
     <input
