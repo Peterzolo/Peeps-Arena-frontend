@@ -6,19 +6,25 @@
 
   .tabs-auth {
     background-color: rgb(41, 40, 39);
+    padding: 10px;
     .tab-group {
       background-color: beige;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      padding: 5px;
       .tab {
         background-color: black;
         list-style-type: none;
         .login-btn {
           width: 350px;
+          font-size: 18px;
+          padding: 10px;
         }
         .register-btn {
           width: 350px;
+          font-size: 18px;
+          padding: 10px;
         }
       }
     }
