@@ -5,15 +5,20 @@
   height: 500px;
 
   .tabs-auth {
-    background-color: antiquewhite;
+    background-color: rgb(41, 40, 39);
     .tab-group {
       background-color: beige;
       display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
       .tab {
         background-color: black;
+        list-style-type: none;
         .login-btn {
+          width: 350px;
         }
         .register-btn {
+          width: 350px;
         }
       }
     }
