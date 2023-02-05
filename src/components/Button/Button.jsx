@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
+import './Button.scss';
 
 export const Button = (props) => {
   const { label, className, disabled, handleClick } = props;
 
   return (
-    <>
-      <button className={className} onClick={handleClick} disabled={disabled}>
+    <div className="button-container">
+      <button className={`button-input ${className}`} onClick={handleClick} disabled={disabled}>
         {label}
       </button>
-    </>
+    </div>
   );
 };
 

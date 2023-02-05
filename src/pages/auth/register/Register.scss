@@ -12,6 +12,8 @@
     border-radius: 10px;
   }
   .form-wrap {
+    background-color: red;
+    width: 600px;
     .input-wrap {
       .check-box-wrap {
         display: flex;
@@ -37,10 +39,6 @@
     .send-btn {
       background-color: var(--primary-1);
       color: white;
-      width: 500px;
-      margin-left: 20px;
-      height: 50px;
-      border-radius: 5px;
     }
   }
   .remarks-wrap {

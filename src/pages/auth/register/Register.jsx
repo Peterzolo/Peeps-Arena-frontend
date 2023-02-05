@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '../../../components/Button/Button';
+// import { Button } from '../../../components/Button/Button';
 import { Input } from '../../../components/input/Input';
 import './Register.scss';
 const hasError = false;
 const errorMessage = 'This is ewrror message';
-const loading = false;
+// const loading = false;
 export const Register = () => {
   const [alertType] = useState('');
   // const [alertType, setAlertType] = useState('');
@@ -64,11 +64,6 @@ export const Register = () => {
           />
           <hr />
         </div>
-        <Button
-          label={`${loading ? 'SIGNIN IN PROGRESS...' : 'SIGN UP'}`}
-          className="send-btn"
-          disabled={!username || !email || !password || !confirmPassword}
-        />
       </form>
       <div className="remarks-wrap">
         <div className="remark-text">Already registered?</div>
