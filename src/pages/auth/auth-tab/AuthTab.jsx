@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Card } from '../../../components/card/Card';
 
 import '../auth-tab/AuthTab.scss';
-// import { Login } from '../login/Login';
+import { Login } from '../login/Login';
 // import { Register } from '../register/Register';
 
 const AuthTab = () => {
@@ -23,10 +23,16 @@ const AuthTab = () => {
                   <button className="register-btn">Sign Up</button>
                 </li>
               </ul>
-              <Card className="card-wrap">
-                {type === 'Sign In' && <div className="tab-item">{/* <Login /> */}</div>}
-                {type === 'Sign Up' && <div className="tab-item">{/* <Register /> */}</div>}
-              </Card>
+              <div className="card-container">
+                <Card className="card-wrap">
+                  {type === 'Sign In' && (
+                    <div className="tab-item">
+                      <Login />
+                    </div>
+                  )}
+                  {type === 'Sign Up' && <div className="tab-item">{/* <Register /> */}</div>}
+                </Card>
+              </div>
             </div>
           </Col>
         </Row>
