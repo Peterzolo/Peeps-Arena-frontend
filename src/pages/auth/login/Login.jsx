@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { Button } from '../../../components/Button/Button';
 import { Input } from '../../../components/input/Input';
 import './Login.scss';
@@ -57,9 +58,16 @@ export const Login = () => {
             <Button
               label={`${loading ? 'SIGNIN IN PROGRESS...' : 'SIGNIN'}`}
               className="send-btn"
-              // disabled={!username || !password}
+              disabled={!username || !password}
             />
+            <div className="forgot-password">Forgot Password?</div>
           </form>
+          <div className="remarks-wrap">
+            <div className="remark-text">Not yet registered?</div>
+            <Link to={'/auth/register'} style={{ textDecoration: 'none', color: '#722ed1' }}>
+              Sign Up
+            </Link>
+          </div>
         </div>
       </div>
     </Container>
