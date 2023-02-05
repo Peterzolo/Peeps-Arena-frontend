@@ -4,7 +4,7 @@ import { Card } from '../../../components/card/Card';
 
 import '../auth-tab/AuthTab.scss';
 import { Login } from '../login/Login';
-// import { Register } from '../register/Register';
+import { Register } from '../register/Register';
 
 const AuthTab = () => {
   // eslint-disable-next-line no-unused-vars
@@ -30,7 +30,11 @@ const AuthTab = () => {
                       <Login />
                     </div>
                   )}
-                  {type === 'Sign Up' && <div className="tab-item">{/* <Register /> */}</div>}
+                  {type === 'Sign Up' && (
+                    <div className="tab-item">
+                      <Register />
+                    </div>
+                  )}
                 </Card>
               </div>
             </div>
