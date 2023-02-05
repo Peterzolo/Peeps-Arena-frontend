@@ -15,8 +15,6 @@ export const Login = () => {
   const [keepLoggedIn] = useState('');
   return (
     <div className="wrapper">
-      {/* <h3 className="login-heading">Login</h3> */}
-
       {hasError && errorMessage && (
         <div className={`alerts ${alertType}`} role="alert">
           {errorMessage}
