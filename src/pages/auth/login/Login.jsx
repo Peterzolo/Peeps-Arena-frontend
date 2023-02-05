@@ -61,13 +61,14 @@ export const Login = () => {
               disabled={!username || !password}
             />
             <div className="forgot-password">Forgot Password?</div>
+            <hr />
+            <div className="remarks-wrap">
+              <div className="remark-text">Not yet registered?</div>
+              <Link to={'/auth/register'} style={{ textDecoration: 'none', color: '#722ed1' }}>
+                Sign Up
+              </Link>
+            </div>
           </form>
-          <div className="remarks-wrap">
-            <div className="remark-text">Not yet registered?</div>
-            <Link to={'/auth/register'} style={{ textDecoration: 'none', color: '#722ed1' }}>
-              Sign Up
-            </Link>
-          </div>
         </div>
       </div>
     </Container>
