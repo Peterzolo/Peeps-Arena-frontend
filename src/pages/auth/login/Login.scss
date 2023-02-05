@@ -19,6 +19,17 @@
           background-color: var(--primary-1);
           color: white;
         }
+        .check-box-wrap {
+          display: flex;
+          margin-top: 20px;
+          .checkBox {
+            margin-right: 20px;
+          }
+          .title {
+            color: var(--primary-1);
+            font-weight: bold;
+          }
+        }
       }
     }
   }

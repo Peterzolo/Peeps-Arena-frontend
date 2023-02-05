@@ -17,35 +17,35 @@ export const Login = () => {
           form here
           {/* <form className="form-wrap" onSubmit={handleSubmit}> */}
           {/* <div className="input-wrap"> */}
-          {/* <Input
-              id="username"
-              name="username"
-              type="text"
-              value={username}
-              labelText="Username"
-              placeholder="Enter Username"
-              handleChange={(event) => setUsername(event.target.value)}
-            /> */}
-          {/* <Input
-              id="password"
-              name="password"
-              type="password"
-              value={password}
-              labelText="Username"
-              placeholder="Enter Username"
-              handleChange={(event) => setPassword(event.target.value)}
-            /> */}
+          <Input
+            id="username"
+            name="username"
+            type="text"
+            value={username}
+            labelText="Username"
+            placeholder="Enter Username"
+            handleChange={(event) => setUsername(event.target.value)}
+          />
+          <Input
+            id="password"
+            name="password"
+            type="password"
+            value={password}
+            labelText="Username"
+            placeholder="Enter Username"
+            handleChange={(event) => setPassword(event.target.value)}
+          />
           {/* <hr /> */}
-          {/* <div className="forgot-password">Forgot Password?</div> */}
+          <div className="forgot-password">Forgot Password?</div>
           {/* <div className="check-box-wrap">
-              <input
-                id="checkbox"
-                name="checkbox"
-                type="checkbox"
-                value={keepLoggedIn}
-                className="checkBox"
-                //  onChange={} handleChange={() => setKeepLoggedIn(!keepLoggedIn)}
-              />
+              // <input
+              //   id="checkbox"
+              //   name="checkbox"
+              //   type="checkbox"
+              //   value={keepLoggedIn}
+              //   className="checkBox"
+              //   //  onChange={} handleChange={() => setKeepLoggedIn(!keepLoggedIn)}
+              // />
               <div className="title">keep me logged in</div>
             </div> */}
           {/* </div> */}
