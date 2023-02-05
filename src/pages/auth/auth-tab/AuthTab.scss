@@ -57,13 +57,12 @@
         justify-content: center;
         @media screen and (max-width: 740px) {
           width: 300px;
-          background-color: green;
         }
         .card-wrap {
           height: auto;
           width: 650px;
           border-radius: 5px;
-          background-color: red;
+          // background-color: red;
           padding: 10px;
           @media screen and (max-width: 740px) {
             width: 300px;
