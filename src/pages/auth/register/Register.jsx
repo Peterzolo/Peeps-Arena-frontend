@@ -69,7 +69,6 @@ export const Register = () => {
               className="send-btn"
               disabled={!username || !password}
             />
-            <hr />
             <div className="remarks-wrap">
               <div className="remark-text">Already registered?</div>
               <Link to={'/auth/register'} style={{ textDecoration: 'none', color: '#722ed1' }}>
