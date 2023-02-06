@@ -11,10 +11,7 @@ const errorMessage = 'Error message';
 const loading = false;
 
 export const ForgotPassword = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  // const [alertType] = useState('');
-  const [keepLoggedIn, setKeepLoggedIn] = useState('');
+  const [email, setEmail] = useState('');
   return (
     <Container className="login-container">
       <div className="sub-container">
@@ -28,46 +25,22 @@ export const ForgotPassword = () => {
         <div className="form-container">
           <form action="" className="form-wrap">
             <Input
-              id="username"
-              name="username"
-              type="text"
-              value={username}
-              labelText="Username"
-              placeholder="Enter Username"
-              handleChange={(event) => setUsername(event.target.value)}
-            />
-            <Input
-              id="password"
-              name="password"
-              type="password"
-              value={password}
-              labelText="Username"
-              placeholder="Enter Username"
-              handleChange={(event) => setPassword(event.target.value)}
+              id="email"
+              name="email"
+              type="email"
+              value={email}
+              labelText="Email"
+              placeholder="Enter Email"
+              handleChange={(event) => setEmail(event.target.value)}
             />
 
-            <div className="check-box-wrap">
-              <input
-                id="checkbox"
-                name="checkbox"
-                type="checkbox"
-                value={keepLoggedIn}
-                className="checkBox"
-                onChange={() => setKeepLoggedIn(!keepLoggedIn)}
-              />
-              <div className="title">keep me logged in</div>
-            </div>
-            <Button
-              label={`${loading ? 'SIGNIN IN PROGRESS...' : 'SIGNIN'}`}
-              className="send-btn"
-              disabled={!username || !password}
-            />
+            <Button label={`${loading ? 'REQUEST IN PROGRESS...' : 'SEND'}`} className="send-btn" disabled={!email} />
             <div className="forgot-password">Forgot Password?</div>
             <hr />
             <div className="remarks-wrap">
-              <div className="remark-text">Not yet registered?</div>
-              <Link to={'/auth/register'} style={{ textDecoration: 'none', color: '#722ed1' }}>
-                Sign Up
+              <div className="remark-text">Back to login</div>
+              <Link to={'/'} style={{ textDecoration: 'none', color: '#722ed1' }}>
+                Login
               </Link>
             </div>
           </form>
