@@ -22,7 +22,8 @@ export const Register = () => {
           // <div className={`alerts ${alertType}`} role="alert">
           //   {errorMessage}
           // </div>
-          <div className="alerts">Here is the error message gggfgfgfgfgfgfgfgfgfgfg</div>
+          // <div className="alerts">Here is the error message gggfgfgfgfgfgfgfgfgfgfg</div>
+          <></>
         )}
 
         <div className="form-container">
