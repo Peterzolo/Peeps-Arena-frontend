@@ -65,7 +65,7 @@ export const Register = () => {
             />
 
             <Button
-              label={`${loading ? 'SIGNIN IN PROGRESS...' : 'SIGNIN'}`}
+              label={`${loading ? 'SIGNIN IN PROGRESS...' : 'REGISTER'}`}
               className="send-btn"
               disabled={!username || !password}
             />

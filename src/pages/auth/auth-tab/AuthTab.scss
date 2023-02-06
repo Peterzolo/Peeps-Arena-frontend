@@ -22,6 +22,9 @@
 
         .tab {
           list-style-type: none;
+          .active {
+            background-color: green;
+          }
           .login-btn {
             width: 150px;
             font-size: 18px;
