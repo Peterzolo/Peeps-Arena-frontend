@@ -6,6 +6,9 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
+  @media screen and (max-width: 740px) {
+    margin-top: -10px;
+  }
   .sub-container {
     .tabs-auth {
       padding: 20px;

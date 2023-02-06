@@ -5,7 +5,20 @@
   justify-content: center;
   // background-color: rgb(22, 112, 82);
   .sub-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     .alerts {
+      background-color: rgb(244, 212, 212);
+      color: rgb(142, 7, 7);
+      width: 500px;
+      padding: 10px;
+      margin-left: 10px;
+      @media screen and (max-width: 740px) {
+        width: 300px;
+      }
     }
     .form-container {
       .form-wrap {

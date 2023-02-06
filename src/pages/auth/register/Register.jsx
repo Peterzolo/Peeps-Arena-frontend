@@ -5,7 +5,7 @@ import { Button } from '../../../components/Button/Button';
 import { Input } from '../../../components/input/Input';
 import './Register.scss';
 
-const hasError = false;
+const hasError = true;
 const errorMessage = 'Error message';
 const loading = false;
 
@@ -14,14 +14,15 @@ export const Register = () => {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [alertType] = useState('');
+  // const [alertType] = useState('');
   return (
     <Container className="login-container">
       <div className="sub-container">
         {hasError && errorMessage && (
-          <div className={`alerts ${alertType}`} role="alert">
-            {errorMessage}
-          </div>
+          // <div className={`alerts ${alertType}`} role="alert">
+          //   {errorMessage}
+          // </div>
+          <div className="alerts">Here is the error message gggfgfgfgfgfgfgfgfgfgfg</div>
         )}
 
         <div className="form-container">
