@@ -61,7 +61,10 @@ export const Login = () => {
               className="send-btn"
               disabled={!username || !password}
             />
-            <div className="forgot-password">Forgot Password?</div>
+            <Link to="/forgot-password" style={{ textDecoration: 'none', marginTop: '10px' }}>
+              <div className="forgot-password">Forgot Password?</div>
+            </Link>
+
             <hr />
             <div className="remarks-wrap">
               <div className="remark-text">Not yet registered?</div>
