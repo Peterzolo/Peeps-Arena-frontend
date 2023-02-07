@@ -5,9 +5,9 @@ import { Button } from '../../../components/Button/Button';
 import { Input } from '../../../components/input/Input';
 import './Login.scss';
 
-const hasError = true;
+const hasError = false;
 const errorMessage = 'Error message';
-const loading = false;
+const loading = true;
 
 export const Login = () => {
   const [username, setUsername] = useState('');
@@ -64,14 +64,6 @@ export const Login = () => {
             <Link to="/forgot-password" style={{ textDecoration: 'none', marginTop: '10px' }}>
               <div className="forgot-password">Forgot Password?</div>
             </Link>
-
-            <hr />
-            <div className="remarks-wrap">
-              <div className="remark-text">Not yet registered?</div>
-              <Link to={'/auth/register'} style={{ textDecoration: 'none', color: '#722ed1' }}>
-                Sign Up
-              </Link>
-            </div>
           </form>
         </div>
       </div>

@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import { Button } from '../../../components/Button/Button';
 import { Input } from '../../../components/input/Input';
 import './Register.scss';
 
-const hasError = true;
+const hasError = false;
 const errorMessage = 'Error message';
-const loading = false;
+const loading = true;
 
 export const Register = () => {
   const [username, setUsername] = useState('');
@@ -71,12 +70,6 @@ export const Register = () => {
               className="send-btn"
               disabled={!username || !password}
             />
-            <div className="remarks-wrap">
-              <div className="remark-text">Already registered?</div>
-              <Link to={'/auth/register'} style={{ textDecoration: 'none', color: '#722ed1' }}>
-                Log In
-              </Link>
-            </div>
           </form>
         </div>
       </div>
