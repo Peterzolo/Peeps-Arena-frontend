@@ -1,12 +1,19 @@
 import { useRoutes } from 'react-router-dom';
-import { ForgotPassword } from './pages/auth/auth-tab/forgot-password/ForgotPassword';
-import { AuthTab } from './pages/auth/index';
+import { AuthTab, ForgotPassword, Login, Register } from './pages/auth/index';
 
 export const AppRouter = () => {
   const elements = useRoutes([
     {
       path: '/',
       element: <AuthTab />
+    },
+    {
+      path: '/login',
+      element: <Login />
+    },
+    {
+      path: '/register',
+      element: <Register />
     },
     {
       path: '/forgot-password',

@@ -3,8 +3,8 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Card } from '../../../components/card/Card';
 
 import '../auth-tab/AuthTab.scss';
-import { Login } from '../login/Login';
-import { Register } from '../register/Register';
+import { Login } from '../../../pages/auth/login/Login';
+import { Register } from '../../../pages/auth/register/Register';
 
 const AuthTab = () => {
   // eslint-disable-next-line no-unused-vars
