@@ -5,18 +5,19 @@ import { Button } from '../../../../components/Button/Button';
 import { Input } from '../../../../components/input/Input';
 import { Card } from '../../../../components/card/Card';
 
-import './ForgotPassword.scss';
+import './PasswordReset.scss';
 
 const hasError = false;
 const errorMessage = 'Error message';
 const loading = true;
 
 export const PasswordReset = () => {
-  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   return (
     <Container className="forgot-password-container">
       <Card className="card-wrap">
-        <div className="title">Forgot Password</div>
+        <div className="title">Password Reset</div>
         {hasError && errorMessage && (
           // <div className={`alerts ${alertType}`} role="alert">
           //   {errorMessage}
@@ -26,20 +27,30 @@ export const PasswordReset = () => {
         <div className="form-container">
           <form action="" className="form-wrap">
             <Input
-              id="email"
-              name="email"
+              id="password"
+              name="password"
               type="text"
-              value={email}
-              labelText="email"
-              placeholder="Enter Email"
-              handleChange={(event) => setEmail(event.target.value)}
+              value={password}
+              labelText="password"
+              placeholder="Enter new password"
+              handleChange={(event) => setPassword(event.target.value)}
+              className="input"
+            />
+            <Input
+              id="confirmPassword"
+              name="confirmPassword"
+              type="text"
+              value={confirmPassword}
+              labelText="confirmPassword"
+              placeholder="Confirm new password"
+              handleChange={(event) => setConfirmPassword(event.target.value)}
               className="input"
             />
 
             <Button
               label={`${loading ? 'REQUEST IN PROGRESS... wait' : 'SEND'}`}
               className="send-btn"
-              disabled={!email}
+              disabled={(!password, confirmPassword)}
             />
           </form>
         </div>
