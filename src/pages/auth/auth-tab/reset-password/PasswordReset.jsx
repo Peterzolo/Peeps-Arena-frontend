@@ -11,7 +11,7 @@ const hasError = false;
 const errorMessage = 'Error message';
 const loading = true;
 
-export const ForgotPassword = () => {
+export const PasswordReset = () => {
   const [email, setEmail] = useState('');
   return (
     <Container className="forgot-password-container">
