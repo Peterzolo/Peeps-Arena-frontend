@@ -36,12 +36,16 @@ export const ForgotPassword = () => {
               className="input"
             />
 
-            <Button label={`${loading ? 'REQUEST IN PROGRESS...' : 'SEND'}`} className="send-btn" disabled={!email} />
+            <Button
+              label={`${loading ? 'REQUEST IN PROGRESS... wait' : 'SEND'}`}
+              className="send-btn"
+              disabled={!email}
+            />
           </form>
         </div>
         <div className="remarks-wrap">
           <div className="remark-text">Back to</div>
-          <Link to={'/auth'} style={{ textDecoration: 'none', color: '#722ed1' }}>
+          <Link to={'/'} style={{ textDecoration: 'none', color: '#722ed1' }}>
             Log In
           </Link>
         </div>

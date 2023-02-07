@@ -40,7 +40,7 @@ export const Register = () => {
             <Input
               id="email"
               name="email"
-              type="text"
+              type="email"
               value={email}
               labelText="Email"
               placeholder="Enter Email"
@@ -52,7 +52,7 @@ export const Register = () => {
               name="password"
               type="password"
               value={password}
-              labelText="Username"
+              labelText="Password"
               placeholder="Enter Password"
               handleChange={(event) => setPassword(event.target.value)}
             />
@@ -61,13 +61,13 @@ export const Register = () => {
               name="confirmPassword"
               type="password"
               value={confirmPassword}
-              labelText="Username"
+              labelText="ConfirmPassword"
               placeholder="Confirm Password"
               handleChange={(event) => setConfirmPassword(event.target.value)}
             />
 
             <Button
-              label={`${loading ? 'SIGNIN IN PROGRESS...' : 'REGISTER'}`}
+              label={`${loading ? 'SIGNIN Up PROGRESS... wait' : 'REGISTER'}`}
               className="send-btn"
               disabled={!username || !password}
             />
