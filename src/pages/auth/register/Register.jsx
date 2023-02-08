@@ -14,7 +14,7 @@ export const Register = () => {
   const [loading, setLoading] = useState(false);
   import { authService } from '../../../services/APIs/auth/authService';
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
     try {
