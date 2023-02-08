@@ -12,5 +12,8 @@ export class Utils {
 
     canvas.width = 200;
     canvas.height = 200;
+
+    context.fillStyle = backgroundColor;
+    context.fillRect(0, 0, canvas.width, canvas.height);
   }
 }
