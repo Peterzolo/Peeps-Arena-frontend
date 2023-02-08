@@ -28,7 +28,7 @@ export const Register = () => {
       setLoggedIn(true);
       setStoredUsername(username);
       setAlertType('alert-success');
-      // Utils.dispatchUser(result, pageReload, dispatch, setUser);
+      Utils.dispatchUser(result, pageReload, dispatch, setUser);
     } catch (error) {
       setLoading(false);
       setHasError(true);
