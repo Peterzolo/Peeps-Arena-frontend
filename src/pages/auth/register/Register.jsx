@@ -92,7 +92,7 @@ export const Register = () => {
             <Button
               label={`${loading ? 'SIGNIN Up PROGRESS... wait' : 'REGISTER'}`}
               className="send-btn"
-              disabled={!username || !password}
+              disabled={!username || !password || !email || confirmPassword}
             />
           </form>
         </div>
