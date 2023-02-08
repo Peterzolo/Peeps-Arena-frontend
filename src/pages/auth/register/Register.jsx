@@ -13,16 +13,14 @@ export const Register = () => {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  // const [alertType] = useState('');
+  const [alertType] = useState('');
   return (
     <Container className="login-container">
       <div className="sub-container">
         {hasError && errorMessage && (
-          // <div className={`alerts ${alertType}`} role="alert">
-          //   {errorMessage}
-          // </div>
-          // <div className="alerts">Here is the error message gggfgfgfgfgfgfgfgfgfgfg</div>
-          <></>
+          <div className={`alerts ${alertType}`} role="alert">
+            {errorMessage}
+          </div>
         )}
 
         <div className="form-container">
