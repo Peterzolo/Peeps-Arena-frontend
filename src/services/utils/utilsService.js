@@ -6,5 +6,8 @@ export class Utils {
     return avatarColors[floor(random(0.9) * avatarColors.length)];
   }
 
-  static generateAvatar(text, backgroundColor, foregroundColor = 'white') {}
+  static generateAvatar(text, backgroundColor, foregroundColor = 'white') {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+  }
 }
