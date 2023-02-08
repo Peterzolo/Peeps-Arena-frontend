@@ -10,9 +10,31 @@ export const Register = () => {
   const [email, setEmail] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [alertType] = useState('');
+  const [loading, setLoading] = useState(flase);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
+    try {
+      const avatarColor = Utils.avatarColor();
+      const avatarImage = Utils.generateAvatar(username.charAt(0).toUpperCase(), avatarColor);
+      // const result = await authService.signUp({
+      //   username,
+      //   email,
+      //   password,
+      //   avatarColor,
+      //   avatarImage
+      // });
+      setLoggedIn(true);
+      setStoredUsername(username);
+      setAlertType('alert-success');
+      // Utils.dispatchUser(result, pageReload, dispatch, setUser);
+    } catch (error) {
+      setLoading(false);
+      setHasError(true);
+      setAlertType('alert-error');
+      setErrorMessage(error?.response?.data?.message);
+    }
   };
 
   return (
