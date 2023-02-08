@@ -16,15 +16,15 @@ export const Register = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      // const avatarColor = Utils.avatarColor();
-      // const avatarImage = Utils.generateAvatar(username.charAt(0).toUpperCase(), avatarColor);
-      // const result = await authService.signUp({
-      //   username,
-      //   email,
-      //   password,
-      //   avatarColor,
-      //   avatarImage
-      // });
+      const avatarColor = Utils.avatarColor();
+      const avatarImage = Utils.generateAvatar(username.charAt(0).toUpperCase(), avatarColor);
+      const result = await authService.signUp({
+        username,
+        email,
+        password,
+        avatarColor,
+        avatarImage
+      });
       setLoggedIn(true);
       setStoredUsername(username);
       setAlertType('alert-success');
