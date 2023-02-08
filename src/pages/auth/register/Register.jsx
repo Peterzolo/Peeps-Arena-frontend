@@ -11,8 +11,10 @@ export const Register = () => {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [alertType] = useState('');
+  const [alertType, setAlertType] = useState('');
   const [loading, setLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -27,10 +29,10 @@ export const Register = () => {
         avatarColor,
         avatarImage
       });
-      setLoggedIn(true);
-      setStoredUsername(username);
+      // setLoggedIn(true);
+      // setStoredUsername(username);
       setAlertType('alert-success');
-      Utils.dispatchUser(result, pageReload, dispatch, setUser);
+      // Utils.dispatchUser(result, pageReload, dispatch, setUser);
     } catch (error) {
       setLoading(false);
       setHasError(true);
