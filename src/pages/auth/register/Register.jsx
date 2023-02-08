@@ -86,7 +86,7 @@ export const Register = () => {
               value={password}
               labelText="Password"
               placeholder="Enter Password"
-              style={{ border: `${hasError ? '1px solid #fa9b8a' : ''}` }}
+              style={{ border: `${hasError ? '1px solid #fa9b8a' : '1px solid #0e6538'}` }}
               handleChange={(event) => setPassword(event.target.value)}
             />
             <Input

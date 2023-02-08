@@ -5,4 +5,6 @@ export class Utils {
   static avatarColor() {
     return avatarColors[floor(random(0.9) * avatarColors.length)];
   }
+
+  static generateAvatar(text, backgroundColor, foregroundColor = 'white') {}
 }
