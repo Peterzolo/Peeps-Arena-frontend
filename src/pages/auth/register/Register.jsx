@@ -11,7 +11,9 @@ export const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [alertType] = useState('');
 
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <Container className="login-container">
