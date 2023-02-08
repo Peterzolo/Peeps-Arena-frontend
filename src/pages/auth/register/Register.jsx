@@ -55,6 +55,7 @@ export const Register = () => {
               value={username}
               labelText="Username"
               placeholder="Enter Username"
+              style={{ border: `${hasError ? '1px solid #fa9b8a' : ''}` }}
               handleChange={(event) => setUsername(event.target.value)}
             />
             <Input
@@ -74,6 +75,7 @@ export const Register = () => {
               value={password}
               labelText="Password"
               placeholder="Enter Password"
+              style={{ border: `${hasError ? '1px solid #fa9b8a' : ''}` }}
               handleChange={(event) => setPassword(event.target.value)}
             />
             <Input
@@ -83,6 +85,7 @@ export const Register = () => {
               value={confirmPassword}
               labelText="ConfirmPassword"
               placeholder="Confirm Password"
+              style={{ border: `${hasError ? '1px solid #fa9b8a' : ''}` }}
               handleChange={(event) => setConfirmPassword(event.target.value)}
             />
 
