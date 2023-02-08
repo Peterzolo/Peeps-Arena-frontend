@@ -10,14 +10,14 @@ export const Register = () => {
   const [email, setEmail] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [alertType] = useState('');
-  const [loading, setLoading] = useState(flase);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const avatarColor = Utils.avatarColor();
-      const avatarImage = Utils.generateAvatar(username.charAt(0).toUpperCase(), avatarColor);
+      // const avatarColor = Utils.avatarColor();
+      // const avatarImage = Utils.generateAvatar(username.charAt(0).toUpperCase(), avatarColor);
       // const result = await authService.signUp({
       //   username,
       //   email,
