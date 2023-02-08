@@ -12,8 +12,8 @@ export const Register = () => {
   const [alertType] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     setLoading(true);
     try {
       const avatarColor = Utils.avatarColor();
