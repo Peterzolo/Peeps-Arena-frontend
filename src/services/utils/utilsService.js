@@ -1,5 +1,5 @@
 import { avatarColors } from './static.data';
-import { floor, random, some, findIndex } from 'lodash';
+import { floor, random } from 'lodash';
 
 export class Utils {
   static avatarColor() {

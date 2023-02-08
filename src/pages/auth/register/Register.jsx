@@ -18,6 +18,10 @@ export const Register = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    // if (password !== confirmPassword) {
+    //   return <div>Password not match</div>;
+    // }
+
     setLoading(true);
     try {
       const avatarColor = Utils.avatarColor();
@@ -33,6 +37,8 @@ export const Register = () => {
       // setStoredUsername(username);
       setAlertType('alert-success');
       // Utils.dispatchUser(result, pageReload, dispatch, setUser);
+
+      console.log('FORM DATA', result);
     } catch (error) {
       setLoading(false);
       setHasError(true);
@@ -96,7 +102,7 @@ export const Register = () => {
             <Button
               label={`${loading ? 'SIGNIN Up PROGRESS... wait' : 'REGISTER'}`}
               className="send-btn"
-              disabled={!username || !password || !email || confirmPassword}
+              disabled={!username || !email || !password || !confirmPassword}
             />
           </form>
         </div>
