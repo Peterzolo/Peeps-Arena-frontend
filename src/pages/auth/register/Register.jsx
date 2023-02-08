@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Button } from '../../../components/Button/Button';
 import { Input } from '../../../components/input/Input';
-import { Utils } from '../../../services/utils/utilsService';
 import { authService } from '../../../services/APIs/auth/authService';
+import { Utils } from '../../../services/utils/utilsService';
+// import { Utils } from '../../../services/utils/utilsService';
 import './Register.scss';
 
 export const Register = () => {
@@ -18,27 +19,27 @@ export const Register = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
     // if (password !== confirmPassword) {
     //   return <div>Password not match</div>;
     // }
 
-    setLoading(true);
     try {
       const avatarColor = Utils.avatarColor();
-      const avatarImage = Utils.generateAvatar(username.charAt(0).toUpperCase(), avatarColor);
-      const result = await authService.signup({
+      // const avatarImage = Utils.generateAvatar(username.charAt(0).toUpperCase(), avatarColor);
+      const result = await authService.signUp({
         username,
-        email,
         password,
+        email,
         avatarColor,
-        avatarImage
+        avatarImage: '..ttttr'
       });
+
       // setLoggedIn(true);
       // setStoredUsername(username);
       setAlertType('alert-success');
+      console.log('GOT HERE', result);
       // Utils.dispatchUser(result, pageReload, dispatch, setUser);
-
-      console.log('FORM DATA', result);
     } catch (error) {
       setLoading(false);
       setHasError(true);
@@ -89,7 +90,7 @@ export const Register = () => {
               handleChange={(event) => setPassword(event.target.value)}
             />
             <Input
-              id="password"
+              id="confirmPassword"
               name="confirmPassword"
               type="password"
               value={confirmPassword}
