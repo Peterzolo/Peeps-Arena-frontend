@@ -9,5 +9,8 @@ export class Utils {
   static generateAvatar(text, backgroundColor, foregroundColor = 'white') {
     const canvas = document.createElement('canvas');
     const context = canvas.getContext('2d');
+
+    canvas.width = 200;
+    canvas.height = 200;
   }
 }
