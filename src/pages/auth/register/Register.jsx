@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Button } from '../../../components/Button/Button';
 import { Input } from '../../../components/input/Input';
+import { Utils } from '../../../services/utils/utilsService';
 import './Register.scss';
 
 export const Register = () => {
@@ -11,6 +12,7 @@ export const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [alertType] = useState('');
   const [loading, setLoading] = useState(false);
+  import { authService } from '../../../services/APIs/auth/authService';
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -18,7 +20,7 @@ export const Register = () => {
     try {
       const avatarColor = Utils.avatarColor();
       const avatarImage = Utils.generateAvatar(username.charAt(0).toUpperCase(), avatarColor);
-      const result = await authService.signUp({
+      const result = await authService.signup({
         username,
         email,
         password,
