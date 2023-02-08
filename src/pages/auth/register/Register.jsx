@@ -4,16 +4,15 @@ import { Button } from '../../../components/Button/Button';
 import { Input } from '../../../components/input/Input';
 import './Register.scss';
 
-const hasError = false;
-const errorMessage = 'Error message';
-const loading = true;
-
 export const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [alertType] = useState('');
+
+  const handleSubmit = (e) => {};
+
   return (
     <Container className="login-container">
       <div className="sub-container">
@@ -24,7 +23,7 @@ export const Register = () => {
         )}
 
         <div className="form-container">
-          <form action="" className="form-wrap">
+          <form action="" className="form-wrap" onSubmit={handleSubmit}>
             <Input
               id="username"
               name="username"
