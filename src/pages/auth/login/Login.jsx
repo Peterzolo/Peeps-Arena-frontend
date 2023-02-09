@@ -13,6 +13,8 @@ export const Login = () => {
   const [alertType, setAlertType] = useState('');
   const [loading, setLoading] = useState(true);
   const [keepLoggedIn, setKeepLoggedIn] = useState('');
+  const [user, setUser] = useState('');
+  const [hasError, setHasError] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
