@@ -10,6 +10,7 @@ const App = () => {
     <div>
       <Theme>
         <BrowserRouter>
+          <ToastContainer />
           <AppRouter />
         </BrowserRouter>
       </Theme>

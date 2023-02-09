@@ -4,6 +4,7 @@ import { Button } from '../../../components/Button/Button';
 import { Input } from '../../../components/input/Input';
 import { authService } from '../../../services/APIs/auth/authService';
 import { Utils } from '../../../services/utils/utilsService';
+import { toast } from 'react-toastify';
 import './Register.scss';
 
 export const Register = () => {
@@ -20,9 +21,9 @@ export const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
-    // if (password !== confirmPassword) {
-    //   return <div>Password not match</div>;
-    // }
+    if (password !== confirmPassword) {
+      toast.error('Password unmathed');
+    }
 
     try {
       const avatarColor = Utils.avatarColor();
@@ -37,6 +38,7 @@ export const Register = () => {
 
       // setLoggedIn(true);
       // setStoredUsername(username);
+      toast.success(result.data.message);
       setAlertType('alert-success');
       console.log('GOT HERE', result);
       setUser(result.data.user);
