@@ -18,13 +18,8 @@ export const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
-    if (password !== confirmPassword) {
-      toast.error('Password unmathed');
-    }
 
     try {
-      const avatarColor = Utils.avatarColor();
-      const avatarImage = Utils.generateAvatarImage(username.charAt(0).toUpperCase(), avatarColor);
       const result = await authService.signUp({
         username,
         password
