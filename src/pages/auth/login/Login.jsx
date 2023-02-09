@@ -27,10 +27,7 @@ export const Login = () => {
       const avatarImage = Utils.generateAvatarImage(username.charAt(0).toUpperCase(), avatarColor);
       const result = await authService.signUp({
         username,
-        password,
-        email,
-        avatarColor,
-        avatarImage
+        password
       });
 
       // setLoggedIn(true);
