@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Button } from '../../../components/Button/Button';
@@ -15,6 +15,7 @@ export const Login = () => {
   const [keepLoggedIn, setKeepLoggedIn] = useState('');
   const [user, setUser] = useState('');
   const [hasError, setHasError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -39,6 +40,13 @@ export const Login = () => {
       setErrorMessage(error?.response?.data?.message);
     }
   };
+  useEffect(() => {
+    if (loading && !user) return;
+    if (user) {
+      console.log('Navigate to login page');
+      setLoading(false);
+    }
+  }, [loading, user]);
 
   return (
     <Container className="login-container">
