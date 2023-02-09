@@ -17,7 +17,7 @@ export const Login = () => {
     event.preventDefault();
     loading(true);
     try {
-      const result = await authService.signUp({
+      const result = await authService.signIn({
         username,
         password
       });
