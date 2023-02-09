@@ -14,6 +14,40 @@ export const Login = () => {
   const [password, setPassword] = useState('');
   // const [alertType] = useState('');
   const [keepLoggedIn, setKeepLoggedIn] = useState('');
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+    if (password !== confirmPassword) {
+      toast.error('Password unmathed');
+    }
+
+    try {
+      const avatarColor = Utils.avatarColor();
+      const avatarImage = Utils.generateAvatarImage(username.charAt(0).toUpperCase(), avatarColor);
+      const result = await authService.signUp({
+        username,
+        password,
+        email,
+        avatarColor,
+        avatarImage
+      });
+
+      // setLoggedIn(true);
+      // setStoredUsername(username);
+      toast.success(result.data.message);
+      setAlertType('alert-success');
+      console.log('GOT HERE', result);
+      setUser(result.data.user);
+      // Utils.dispatchUser(result, pageReload, dispatch, setUser);
+    } catch (error) {
+      setLoading(false);
+      setHasError(true);
+      setAlertType('alert-error');
+      setErrorMessage(error?.response?.data?.message);
+    }
+  };
+
   return (
     <Container className="login-container">
       <div className="sub-container">
