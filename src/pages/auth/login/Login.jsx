@@ -18,7 +18,6 @@ export const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
-
     try {
       const result = await authService.signUp({
         username,
@@ -51,7 +50,7 @@ export const Login = () => {
         )}
 
         <div className="form-container">
-          <form action="" className="form-wrap">
+          <form action="" className="form-wrap" onSubmit={handleSubmit}>
             <Input
               id="username"
               name="username"
