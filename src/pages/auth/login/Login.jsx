@@ -11,7 +11,7 @@ export const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [alertType, setAlertType] = useState('');
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [keepLoggedIn, setKeepLoggedIn] = useState('');
   const [user, setUser] = useState('');
   const [hasError, setHasError] = useState(false);
@@ -19,9 +19,9 @@ export const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    loading(true);
+    setLoading(true);
     try {
-      const result = await authService.signIn({
+      const result = await authService.logIn({
         username,
         password
       });
