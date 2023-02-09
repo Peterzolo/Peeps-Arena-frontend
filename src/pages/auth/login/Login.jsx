@@ -5,19 +5,16 @@ import { Button } from '../../../components/Button/Button';
 import { Input } from '../../../components/input/Input';
 import './Login.scss';
 
-const hasError = false;
-const errorMessage = 'Error message';
-const loading = true;
-
 export const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  // const [alertType] = useState('');
+  const [alertType, setAlertType] = useState('');
+  const [loading, setLoading] = useState(true);
   const [keepLoggedIn, setKeepLoggedIn] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setLoading(true);
+    loading(true);
     try {
       const result = await authService.signUp({
         username,
@@ -43,10 +40,9 @@ export const Login = () => {
     <Container className="login-container">
       <div className="sub-container">
         {hasError && errorMessage && (
-          // <div className={`alerts ${alertType}`} role="alert">
-          //   {errorMessage}
-          // </div>
-          <div className="alerts">Here is the error message gggfgfgfgfgfgfgfgfgfgfg</div>
+          <div className={`alerts ${alertType}`} role="alert">
+            {errorMessage}
+          </div>
         )}
 
         <div className="form-container">
