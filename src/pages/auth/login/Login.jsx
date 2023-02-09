@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Button } from '../../../components/Button/Button';
 import { Input } from '../../../components/input/Input';
+import { authService } from '../../../services/APIs/auth/authService';
 import './Login.scss';
 
 export const Login = () => {
