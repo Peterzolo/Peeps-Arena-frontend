@@ -1,10 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Button } from '../../../components/Button/Button';
 import { Input } from '../../../components/input/Input';
 import { authService } from '../../../services/APIs/auth/authService';
 import { Utils } from '../../../services/utils/utilsService';
-// import { Utils } from '../../../services/utils/utilsService';
 import './Register.scss';
 
 export const Register = () => {
@@ -16,6 +15,7 @@ export const Register = () => {
   const [loading, setLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [user, setUser] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -26,19 +26,20 @@ export const Register = () => {
 
     try {
       const avatarColor = Utils.avatarColor();
-      // const avatarImage = Utils.generateAvatar(username.charAt(0).toUpperCase(), avatarColor);
+      const avatarImage = Utils.generateAvatarImage(username.charAt(0).toUpperCase(), avatarColor);
       const result = await authService.signUp({
         username,
         password,
         email,
         avatarColor,
-        avatarImage: '..ttttr'
+        avatarImage
       });
 
       // setLoggedIn(true);
       // setStoredUsername(username);
       setAlertType('alert-success');
       console.log('GOT HERE', result);
+      setUser(result.data.user);
       // Utils.dispatchUser(result, pageReload, dispatch, setUser);
     } catch (error) {
       setLoading(false);
@@ -47,6 +48,14 @@ export const Register = () => {
       setErrorMessage(error?.response?.data?.message);
     }
   };
+
+  useEffect(() => {
+    if (loading && !user) return;
+    if (user) {
+      console.log('Navigate to login page');
+      setLoading(false);
+    }
+  }, [loading, user]);
 
   return (
     <Container className="login-container">
