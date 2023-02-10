@@ -19,9 +19,9 @@ export const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
-    // if (password !== confirmPassword) {
-    //   toast.error('Password unmathed');
-    // }
+    if (password !== confirmPassword) {
+      toast.error('Password unmathed');
+    }
 
     try {
       const avatarColor = Utils.avatarColor();
@@ -66,7 +66,7 @@ export const Register = () => {
               value={username}
               labelText="Username"
               placeholder="Enter Username"
-              style={{ border: `${hasError ? '1px solid #fa9b8a' : '#52c41a'}` }}
+              style={{ border: `${hasError ? '1px solid #fa9b8a' : ''}` }}
               handleChange={(event) => setUsername(event.target.value)}
             />
             <Input
@@ -76,7 +76,7 @@ export const Register = () => {
               value={email}
               labelText="Email"
               placeholder="Enter Email"
-              style={{ border: `${hasError ? '1px solid #fa9b8a' : '#52c41a'}` }}
+              style={{ border: `${hasError ? '1px solid #fa9b8a' : ''}` }}
               handleChange={(event) => setEmail(event.target.value)}
             />
             <Input
@@ -86,7 +86,7 @@ export const Register = () => {
               value={password}
               labelText="Password"
               placeholder="Enter Password"
-              style={{ border: `${hasError ? '1px solid #fa9b8a' : '1px solid #52c41a'}` }}
+              style={{ border: `${hasError ? '1px solid #fa9b8a' : ''}` }}
               handleChange={(event) => setPassword(event.target.value)}
             />
             <Input
