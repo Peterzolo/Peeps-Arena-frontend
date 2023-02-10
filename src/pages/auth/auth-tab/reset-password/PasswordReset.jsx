@@ -12,6 +12,7 @@ export const PasswordReset = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const [searchParams] = useSearchParams();
 
   const handleSubmit = async (event) => {
@@ -31,6 +32,7 @@ export const PasswordReset = () => {
       setLoading(false);
     } catch (error) {
       setLoading(false);
+      setHasError(true);
       toast.error(error?.response?.data?.message);
     }
   };
@@ -48,6 +50,7 @@ export const PasswordReset = () => {
               value={password}
               labelText="password"
               placeholder="Enter new password"
+              style={{ border: `${hasError ? '1px solid #fa9b8a' : ''}` }}
               handleChange={(event) => setPassword(event.target.value)}
               className="input"
             />
@@ -58,6 +61,7 @@ export const PasswordReset = () => {
               value={confirmPassword}
               labelText="confirmPassword"
               placeholder="Confirm new password"
+              style={{ border: `${hasError ? '1px solid #fa9b8a' : ''}` }}
               handleChange={(event) => setConfirmPassword(event.target.value)}
               className="input"
             />
