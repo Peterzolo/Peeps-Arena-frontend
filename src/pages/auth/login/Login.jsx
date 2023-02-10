@@ -73,8 +73,8 @@ export const Login = () => {
               name="password"
               type="password"
               value={password}
-              labelText="Username"
-              placeholder="Enter Username"
+              labelText="Password"
+              placeholder="Enter Password"
               handleChange={(event) => setPassword(event.target.value)}
             />
 
