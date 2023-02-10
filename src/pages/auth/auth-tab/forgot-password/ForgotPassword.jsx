@@ -58,7 +58,7 @@ export const ForgotPassword = () => {
         </div>
         <div className="remarks-wrap">
           <div className="remark-text">Back to</div>
-          <Link to={'/'} style={{ textDecoration: 'none', color: '#722ed1' }}>
+          <Link to={'/login'} style={{ textDecoration: 'none', color: '#722ed1' }}>
             Log In
           </Link>
         </div>

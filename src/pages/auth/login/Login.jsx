@@ -96,7 +96,7 @@ export const Login = () => {
           <hr />
           <div className="remarks-wrap">
             <div className="remark-text">Not yet registered</div> &nbsp; &nbsp; &nbsp;
-            <Link to={'/login'} style={{ textDecoration: 'none', color: '#722ed1' }}>
+            <Link to={'/register'} style={{ textDecoration: 'none', color: '#722ed1' }}>
               Sign Up Here
             </Link>
           </div>
