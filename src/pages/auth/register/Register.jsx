@@ -23,7 +23,7 @@ export const Register = () => {
     event.preventDefault();
     setLoading(true);
     if (password !== confirmPassword) {
-      toast.error('Password unmathed');
+      toast.error('Passwords do not match');
     } else {
       try {
         const avatarColor = Utils.avatarColor();
