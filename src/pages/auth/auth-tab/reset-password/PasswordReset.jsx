@@ -20,20 +20,20 @@ export const PasswordReset = () => {
     setLoading(true);
     if (password !== confirmPassword) {
       toast.error('Password unmathed');
-    }
+    } else {
+      try {
+        const response = await authService.resetPassword(searchParams.get('token'), {
+          password,
+          confirmPassword
+        });
 
-    try {
-      const response = await authService.resetPassword(searchParams.get('token'), {
-        password,
-        confirmPassword
-      });
-
-      toast.success(response.data.message);
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-      setHasError(true);
-      toast.error(error?.response?.data?.message);
+        toast.success(response.data.message);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        setHasError(true);
+        toast.error(error?.response?.data?.message);
+      }
     }
   };
 
