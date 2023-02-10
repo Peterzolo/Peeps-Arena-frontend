@@ -1,65 +1,60 @@
-.login-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  // background-color: rgb(22, 112, 82);
-  .sub-container {
+.register-container {
+  // background-color: green;
+  width: 800px;
+  height: 100vh;
+  margin-top: 100px;
+  padding: 20px;
+  .card-wrap {
+    height: 400px;
+    width: 700px;
+    background-color: white;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    box-shadow: rgba(142, 190, 237, 0.2) 0px 8px 24px;
+    @media screen and (max-width: 740px) {
+      width: 350px;
+    }
+    .title {
+      color: var(--primary-1);
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+    .alerts {
+      text-align: center;
+      background-color: rgb(244, 212, 212);
+      color: rgb(142, 7, 7);
+      // width: 500px;
+      padding: 10px;
+      margin-left: 10px;
+      @media screen and (max-width: 740px) {
+        width: 300px;
+      }
+    }
 
     .form-container {
       .form-wrap {
-        width: 500px;
-        // background-color: grey;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        .input {
+          @media screen and (max-width: 740px) {
+            width: 300px;
+          }
+        }
         .send-btn {
           background-color: var(--primary-1);
           color: white;
-          cursor: pointer;
-          &:disabled {
-            cursor: not-allowed;
-            pointer-events: none;
-            background-color: var(--gray-5);
-            opacity: 0.5;
-            border-color: var(--primary-1);
-          }
-        }
-        .check-box-wrap {
-          display: flex;
-          margin-top: 20px;
-          .checkBox {
-            margin-right: 20px;
-          }
-          .title {
-            color: var(--primary-1);
-            font-weight: bold;
-          }
-        }
-        .horizontal-rule {
-          background-color: var(--primary-1);
-          height: 20px;
-        }
-        .forgot-password {
-          color: red;
-          text-align: right;
         }
       }
-      .remarks-wrap {
-        display: flex;
-        width: 300px;
-        align-items: center;
-        justify-content: space-around;
-        padding: 20px;
-        .remark-text {
-          text-decoration: none;
-        }
-      }
+    }
+    .remarks-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 150px;
+      margin-top: 10px;
     }
   }
 }

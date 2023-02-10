@@ -6,6 +6,7 @@ import { authService } from '../../../services/APIs/auth/authService';
 import { Utils } from '../../../services/utils/utilsService';
 import { toast } from 'react-toastify';
 import './Register.scss';
+import { Card } from '../../../components/card/Card';
 
 export const Register = () => {
   const [username, setUsername] = useState('');
@@ -55,8 +56,10 @@ export const Register = () => {
   }, [loading, user]);
 
   return (
-    <Container className="login-container">
-      <div className="sub-container">
+    <Container className="register-container">
+      <Card className="card-wrap">
+        <div className="title">Register</div>
+
         <div className="form-container">
           <form action="" className="form-wrap" onSubmit={handleSubmit}>
             <Input
@@ -107,7 +110,7 @@ export const Register = () => {
             />
           </form>
         </div>
-      </div>
+      </Card>
     </Container>
   );
 };
