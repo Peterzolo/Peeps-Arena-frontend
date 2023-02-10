@@ -65,7 +65,7 @@ export const PasswordReset = () => {
             <Button
               label={`${loading ? 'REQUEST IN PROGRESS... wait' : 'SEND'}`}
               className="send-btn"
-              disabled={(!password, confirmPassword)}
+              disabled={(!password, !confirmPassword)}
             />
           </form>
         </div>
