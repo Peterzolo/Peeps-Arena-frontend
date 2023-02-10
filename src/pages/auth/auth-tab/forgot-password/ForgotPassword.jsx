@@ -19,16 +19,15 @@ export const ForgotPassword = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
-
     try {
       const result = await authService.forgotPassword({
         email
       });
 
       toast.success(result.data.message);
-      setAlertType('alert-success');
-      console.log('GOT HERE', result);
+
       // Utils.dispatchUser(result, pageReload, dispatch, setUser);
+      setLoading(false);
     } catch (error) {
       setLoading(false);
       setHasError(true);
