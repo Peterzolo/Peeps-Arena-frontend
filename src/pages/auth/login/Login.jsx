@@ -10,12 +10,10 @@ import './Login.scss';
 export const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [alertType, setAlertType] = useState('');
   const [loading, setLoading] = useState(false);
   const [keepLoggedIn, setKeepLoggedIn] = useState('');
   const [user, setUser] = useState('');
   const [hasError, setHasError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -29,15 +27,14 @@ export const Login = () => {
       // setLoggedIn(true);
       // setStoredUsername(username);
       toast.success(result.data.message);
-      setAlertType('alert-success');
-      console.log('GOT HERE', result);
+
       setUser(result.data.user);
       // Utils.dispatchUser(result, pageReload, dispatch, setUser);
+      setLoading(false);
     } catch (error) {
       setLoading(false);
       setHasError(true);
-      setAlertType('alert-error');
-      setErrorMessage(error?.response?.data?.message);
+      toast.error(error?.response?.data?.message);
     }
   };
   useEffect(() => {
@@ -51,12 +48,6 @@ export const Login = () => {
   return (
     <Container className="login-container">
       <div className="sub-container">
-        {hasError && errorMessage && (
-          <div className={`alerts ${alertType}`} role="alert">
-            {errorMessage}
-          </div>
-        )}
-
         <div className="form-container">
           <form action="" className="form-wrap" onSubmit={handleSubmit}>
             <Input
@@ -66,6 +57,7 @@ export const Login = () => {
               value={username}
               labelText="Username"
               placeholder="Enter Username"
+              style={{ border: `${hasError ? '1px solid #fa9b8a' : ''}` }}
               handleChange={(event) => setUsername(event.target.value)}
             />
             <Input
@@ -75,6 +67,7 @@ export const Login = () => {
               value={password}
               labelText="Password"
               placeholder="Enter Password"
+              style={{ border: `${hasError ? '1px solid #fa9b8a' : ''}` }}
               handleChange={(event) => setPassword(event.target.value)}
             />
 
