@@ -85,7 +85,7 @@ export const Login = () => {
               <div className="sub-title">keep me logged in</div>
             </div>
             <Button
-              label={`${loading ? 'SIGNIN IN PROGRESS... wait' : 'SIGNIN'}`}
+              label={`${loading ? 'SIGNIN IN PROGRESS... please wait' : 'SIGNIN'}`}
               className="send-btn"
               disabled={!username || !password}
             />

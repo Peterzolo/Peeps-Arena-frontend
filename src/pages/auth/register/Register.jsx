@@ -40,6 +40,10 @@ export const Register = () => {
         toast.success(result.data.message);
         setUser(result.data.user);
         // Utils.dispatchUser(result, pageReload, dispatch, setUser);
+        setPassword('');
+        setEmail('');
+        setUsername('');
+        setConfirmPassword('');
         setLoading(false);
       } catch (error) {
         setLoading(false);
@@ -106,7 +110,7 @@ export const Register = () => {
             />
 
             <Button
-              label={`${loading ? 'SIGNIN Up PROGRESS... wait' : 'REGISTER'}`}
+              label={`${loading ? 'SIGNIN UP IN PROGRESS... please wait' : 'REGISTER'}`}
               className="send-btn"
               disabled={!username || !email || !password || !confirmPassword}
             />
