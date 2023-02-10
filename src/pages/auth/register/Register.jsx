@@ -34,7 +34,7 @@ export const Register = () => {
         avatarImage
       });
 
-      // setLoggedIn(true);
+      setLoading(false);
       // setStoredUsername(username);
       toast.success(result.data.message);
       setUser(result.data.user);
