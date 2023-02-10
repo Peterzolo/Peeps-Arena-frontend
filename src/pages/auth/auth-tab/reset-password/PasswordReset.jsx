@@ -44,7 +44,7 @@ export const PasswordReset = () => {
             <Input
               id="password"
               name="password"
-              type="text"
+              type="password"
               value={password}
               labelText="password"
               placeholder="Enter new password"
@@ -54,7 +54,7 @@ export const PasswordReset = () => {
             <Input
               id="confirmPassword"
               name="confirmPassword"
-              type="text"
+              type="password"
               value={confirmPassword}
               labelText="confirmPassword"
               placeholder="Confirm new password"
