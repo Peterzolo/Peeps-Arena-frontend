@@ -7,11 +7,14 @@ import { Card } from '../../../../components/card/Card';
 
 import './ForgotPassword.scss';
 
-const hasError = false;
-const errorMessage = 'Error message';
-const loading = true;
-
 export const ForgotPassword = () => {
+  const [email, setEmail] = useState('');
+  const [alertType, setAlertType] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [keepLoggedIn, setKeepLoggedIn] = useState('');
+  const [user, setUser] = useState('');
+  const [hasError, setHasError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [email, setEmail] = useState('');
   return (
     <Container className="forgot-password-container">
