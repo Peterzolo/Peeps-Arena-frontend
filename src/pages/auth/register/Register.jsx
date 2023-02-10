@@ -5,8 +5,10 @@ import { Input } from '../../../components/input/Input';
 import { authService } from '../../../services/APIs/auth/authService';
 import { Utils } from '../../../services/utils/utilsService';
 import { toast } from 'react-toastify';
-import './Register.scss';
 import { Card } from '../../../components/card/Card';
+import { Link } from 'react-router-dom';
+
+import './Register.scss';
 
 export const Register = () => {
   const [username, setUsername] = useState('');
@@ -109,6 +111,13 @@ export const Register = () => {
               disabled={!username || !email || !password || !confirmPassword}
             />
           </form>
+          <hr />
+          <div className="remarks-wrap">
+            <div className="remark-text">Already Registered</div> &nbsp; &nbsp; &nbsp;
+            <Link to={'/login'} style={{ textDecoration: 'none', color: '#722ed1' }}>
+              Log In
+            </Link>
+          </div>
         </div>
       </Card>
     </Container>
