@@ -21,28 +21,28 @@ export const Register = () => {
     setLoading(true);
     if (password !== confirmPassword) {
       toast.error('Password unmathed');
-    }
+    } else {
+      try {
+        const avatarColor = Utils.avatarColor();
+        const avatarImage = Utils.generateAvatarImage(username.charAt(0).toUpperCase(), avatarColor);
+        const result = await authService.signUp({
+          username,
+          password,
+          email,
+          avatarColor,
+          avatarImage
+        });
 
-    try {
-      const avatarColor = Utils.avatarColor();
-      const avatarImage = Utils.generateAvatarImage(username.charAt(0).toUpperCase(), avatarColor);
-      const result = await authService.signUp({
-        username,
-        password,
-        email,
-        avatarColor,
-        avatarImage
-      });
-
-      // setStoredUsername(username);
-      toast.success(result.data.message);
-      setUser(result.data.user);
-      // Utils.dispatchUser(result, pageReload, dispatch, setUser);
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-      setHasError(true);
-      toast.error(error?.response?.data?.message);
+        // setStoredUsername(username);
+        toast.success(result.data.message);
+        setUser(result.data.user);
+        // Utils.dispatchUser(result, pageReload, dispatch, setUser);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        setHasError(true);
+        toast.error(error?.response?.data?.message);
+      }
     }
   };
 
