@@ -25,14 +25,13 @@ export const ForgotPassword = () => {
       });
 
       toast.success(result.data.message);
-
-      // Utils.dispatchUser(result, pageReload, dispatch, setUser);
       setLoading(false);
     } catch (error) {
       setLoading(false);
       setHasError(true);
       setAlertType('alert-error');
       setErrorMessage(error?.response?.data?.message);
+      toast.error(error?.response?.data?.message);
     }
   };
   return (
