@@ -36,14 +36,8 @@ export const PasswordReset = () => {
     <Container className="forgot-password-container">
       <Card className="card-wrap">
         <div className="title">Password Reset</div>
-        {hasError && errorMessage && (
-          // <div className={`alerts ${alertType}`} role="alert">
-          //   {errorMessage}
-          // </div>
-          <div className="alerts">Here is the error message gggfgfgfgfgfgfgfgfgfgfg</div>
-        )}
         <div className="form-container">
-          <form action="" className="form-wrap">
+          <form action="" className="form-wrap" onSubmit={handleSubmit}>
             <Input
               id="password"
               name="password"
