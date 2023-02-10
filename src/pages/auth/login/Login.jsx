@@ -5,6 +5,7 @@ import { Button } from '../../../components/Button/Button';
 import { Input } from '../../../components/input/Input';
 import { toast } from 'react-toastify';
 import { authService } from '../../../services/APIs/auth/authService';
+import { Card } from '../../../components/card/Card';
 import './Login.scss';
 
 export const Login = () => {
@@ -47,7 +48,8 @@ export const Login = () => {
 
   return (
     <Container className="login-container">
-      <div className="sub-container">
+      <Card className="card-wrap">
+        <div className="title">Login</div>
         <div className="form-container">
           <form action="" className="form-wrap" onSubmit={handleSubmit}>
             <Input
@@ -80,7 +82,7 @@ export const Login = () => {
                 className="checkBox"
                 onChange={() => setKeepLoggedIn(!keepLoggedIn)}
               />
-              <div className="title">keep me logged in</div>
+              <div className="sub-title">keep me logged in</div>
             </div>
             <Button
               label={`${loading ? 'SIGNIN IN PROGRESS... wait' : 'SIGNIN'}`}
@@ -91,8 +93,15 @@ export const Login = () => {
               <div className="forgot-password">Forgot Password?</div>
             </Link>
           </form>
+          <hr />
+          <div className="remarks-wrap">
+            <div className="remark-text">Already Registered</div> &nbsp; &nbsp; &nbsp;
+            <Link to={'/login'} style={{ textDecoration: 'none', color: '#722ed1' }}>
+              Log In
+            </Link>
+          </div>
         </div>
-      </div>
+      </Card>
     </Container>
   );
 };
