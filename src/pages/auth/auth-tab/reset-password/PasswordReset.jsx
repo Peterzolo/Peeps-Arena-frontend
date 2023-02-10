@@ -22,12 +22,12 @@ export const PasswordReset = () => {
     }
 
     try {
-      const result = await authService.resetPassword({
+      const response = await authService.resetPassword(searchParams.get('token'), {
         password,
         confirmPassword
       });
 
-      toast.success(result.data.message);
+      toast.success(response.data.message);
       setLoading(false);
     } catch (error) {
       setLoading(false);
