@@ -7,10 +7,7 @@ import { Card } from '../../../../components/card/Card';
 import { toast } from 'react-toastify';
 
 import './PasswordReset.scss';
-
-const hasError = false;
-const errorMessage = 'Error message';
-
+import { authService } from '../../../../services/APIs/auth/authService';
 export const PasswordReset = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -21,9 +18,7 @@ export const PasswordReset = () => {
     event.preventDefault();
     setLoading(true);
     try {
-      const result = await authService.forgotPassword({
-        email
-      });
+      const result = await authService.resetPassword({});
 
       toast.success(result.data.message);
       setLoading(false);
