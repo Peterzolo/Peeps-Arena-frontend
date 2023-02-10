@@ -8,13 +8,11 @@ class AuthService {
 
   async logIn(body) {
     const response = await axios.post('/login', body);
-    console.log('RESPONSE', response);
     return response;
   }
 
   async forgotPassword(body) {
     const response = await axios.post('/forgot-password', body);
-    console.log('RESPONSE', response);
     return response;
   }
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Button } from '../../../../components/Button/Button';
 import { Input } from '../../../../components/input/Input';
 import { Card } from '../../../../components/card/Card';
@@ -9,11 +9,29 @@ import './PasswordReset.scss';
 
 const hasError = false;
 const errorMessage = 'Error message';
-const loading = true;
 
 export const PasswordReset = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [searchParams] = useSearchParams();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+    try {
+      const result = await authService.forgotPassword({
+        email
+      });
+
+      toast.success(result.data.message);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      toast.error(error?.response?.data?.message);
+    }
+  };
+
   return (
     <Container className="forgot-password-container">
       <Card className="card-wrap">
