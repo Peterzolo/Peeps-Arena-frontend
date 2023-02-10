@@ -13,6 +13,7 @@ export const Register = () => {
   const [email, setEmail] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const [user, setUser] = useState('');
 
   const handleSubmit = async (event) => {
@@ -36,11 +37,11 @@ export const Register = () => {
       // setLoggedIn(true);
       // setStoredUsername(username);
       toast.success(result.data.message);
-      console.log('GOT HERE', result);
       setUser(result.data.user);
       // Utils.dispatchUser(result, pageReload, dispatch, setUser);
     } catch (error) {
       setLoading(false);
+      setHasError(true);
     }
   };
 
