@@ -12,6 +12,7 @@ import './ForgotPassword.scss';
 export const ForgotPassword = () => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
+  const [hasError, setHasError] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,6 +26,7 @@ export const ForgotPassword = () => {
       setLoading(false);
     } catch (error) {
       setLoading(false);
+      setHasError(true);
       toast.error(error?.response?.data?.message);
     }
   };
@@ -42,6 +44,7 @@ export const ForgotPassword = () => {
               value={email}
               labelText="email"
               placeholder="Enter Email"
+              style={{ border: `${hasError ? '1px solid #fa9b8a' : ''}` }}
               handleChange={(event) => setEmail(event.target.value)}
               className="input"
             />
