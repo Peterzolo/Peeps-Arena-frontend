@@ -10,10 +10,7 @@ import { authService } from '../../../../services/APIs/auth/authService';
 import './ForgotPassword.scss';
 
 export const ForgotPassword = () => {
-  const [alertType, setAlertType] = useState('');
   const [loading, setLoading] = useState(false);
-  const [hasError, setHasError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
   const [email, setEmail] = useState('');
 
   const handleSubmit = async (event) => {
@@ -28,9 +25,6 @@ export const ForgotPassword = () => {
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      setHasError(true);
-      setAlertType('alert-error');
-      setErrorMessage(error?.response?.data?.message);
       toast.error(error?.response?.data?.message);
     }
   };
@@ -38,11 +32,7 @@ export const ForgotPassword = () => {
     <Container className="forgot-password-container">
       <Card className="card-wrap">
         <div className="title">Forgot Password</div>
-        {hasError && errorMessage && (
-          <div className={`alerts ${alertType}`} role="alert">
-            {errorMessage}
-          </div>
-        )}
+
         <div className="form-container">
           <form action="" className="form-wrap" onSubmit={handleSubmit}>
             <Input
