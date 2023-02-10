@@ -33,11 +33,11 @@ export const PasswordReset = () => {
 
         toast.success(response.data.message);
         setLoading(false);
+        navigate('/login');
       } catch (error) {
         setHasError(true);
         toast.error(error?.response?.data?.message);
         setLoading(false);
-        navigate('/login');
       }
     }
   };
