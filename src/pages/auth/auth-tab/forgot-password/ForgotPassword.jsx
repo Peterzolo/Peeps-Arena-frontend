@@ -5,9 +5,9 @@ import { Button } from '../../../../components/Button/Button';
 import { Input } from '../../../../components/input/Input';
 import { Card } from '../../../../components/card/Card';
 import { toast } from 'react-toastify';
+import { authService } from '../../../../services/APIs/auth/authService';
 
 import './ForgotPassword.scss';
-import { authService } from '../../../../services/APIs/auth/authService';
 
 export const ForgotPassword = () => {
   const [alertType, setAlertType] = useState('');
@@ -19,17 +19,15 @@ export const ForgotPassword = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
+
     try {
-      const result = await authService.ForgotPassword({
+      const result = await authService.forgotPassword({
         email
       });
 
-      // setLoggedIn(true);
-      // setStoredUsername(username);
       toast.success(result.data.message);
       setAlertType('alert-success');
       console.log('GOT HERE', result);
-
       // Utils.dispatchUser(result, pageReload, dispatch, setUser);
     } catch (error) {
       setLoading(false);
