@@ -4,6 +4,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { Button } from '../../../../components/Button/Button';
 import { Input } from '../../../../components/input/Input';
 import { Card } from '../../../../components/card/Card';
+import { toast } from 'react-toastify';
 
 import './PasswordReset.scss';
 
