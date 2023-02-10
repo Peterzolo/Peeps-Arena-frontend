@@ -12,10 +12,8 @@ export const Register = () => {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [alertType, setAlertType] = useState('');
   const [loading, setLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
   const [user, setUser] = useState('');
 
   const handleSubmit = async (event) => {
