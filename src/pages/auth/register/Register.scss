@@ -2,11 +2,12 @@
   // background-color: green;
   width: 800px;
   height: 100vh;
-  margin-top: 100px;
+  margin-top: 50px;
   padding: 20px;
   .card-wrap {
-    height: 400px;
-    width: 700px;
+    // height: 700px;
+    padding: 20px;
+    width: 600px;
     background-color: white;
     border-radius: 10px;
     display: flex;
@@ -19,7 +20,7 @@
     }
     .title {
       color: var(--primary-1);
-      font-size: 20px;
+      font-size: 30px;
       font-weight: bold;
       text-align: center;
       letter-spacing: 2px;
