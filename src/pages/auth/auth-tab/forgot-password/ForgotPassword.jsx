@@ -4,30 +4,51 @@ import { Link } from 'react-router-dom';
 import { Button } from '../../../../components/Button/Button';
 import { Input } from '../../../../components/input/Input';
 import { Card } from '../../../../components/card/Card';
+import { toast } from 'react-toastify';
 
 import './ForgotPassword.scss';
+import { authService } from '../../../../services/APIs/auth/authService';
 
 export const ForgotPassword = () => {
-  const [email, setEmail] = useState('');
   const [alertType, setAlertType] = useState('');
   const [loading, setLoading] = useState(false);
-  const [keepLoggedIn, setKeepLoggedIn] = useState('');
-  const [user, setUser] = useState('');
   const [hasError, setHasError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [email, setEmail] = useState('');
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+    try {
+      const result = await authService.ForgotPassword({
+        email
+      });
+
+      // setLoggedIn(true);
+      // setStoredUsername(username);
+      toast.success(result.data.message);
+      setAlertType('alert-success');
+      console.log('GOT HERE', result);
+
+      // Utils.dispatchUser(result, pageReload, dispatch, setUser);
+    } catch (error) {
+      setLoading(false);
+      setHasError(true);
+      setAlertType('alert-error');
+      setErrorMessage(error?.response?.data?.message);
+    }
+  };
   return (
     <Container className="forgot-password-container">
       <Card className="card-wrap">
         <div className="title">Forgot Password</div>
         {hasError && errorMessage && (
-          // <div className={`alerts ${alertType}`} role="alert">
-          //   {errorMessage}
-          // </div>
-          <div className="alerts">Here is the error message gggfgfgfgfgfgfgfgfgfgfg</div>
+          <div className={`alerts ${alertType}`} role="alert">
+            {errorMessage}
+          </div>
         )}
         <div className="form-container">
-          <form action="" className="form-wrap">
+          <form action="" className="form-wrap" onSubmit={handleSubmit}>
             <Input
               id="email"
               name="email"
