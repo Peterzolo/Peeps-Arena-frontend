@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { Button } from '../../../../components/Button/Button';
 import { Input } from '../../../../components/input/Input';
 import { Card } from '../../../../components/card/Card';
@@ -14,6 +14,7 @@ export const PasswordReset = () => {
   const [loading, setLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -27,12 +28,16 @@ export const PasswordReset = () => {
           confirmPassword
         });
 
+        setPassword('');
+        setConfirmPassword('');
+
         toast.success(response.data.message);
         setLoading(false);
       } catch (error) {
-        setLoading(false);
         setHasError(true);
         toast.error(error?.response?.data?.message);
+        setLoading(false);
+        navigate('/login');
       }
     }
   };
