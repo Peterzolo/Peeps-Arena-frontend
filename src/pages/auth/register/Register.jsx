@@ -34,14 +34,15 @@ export const Register = () => {
         avatarImage
       });
 
-      setLoading(false);
       // setStoredUsername(username);
       toast.success(result.data.message);
       setUser(result.data.user);
       // Utils.dispatchUser(result, pageReload, dispatch, setUser);
+      setLoading(false);
     } catch (error) {
       setLoading(false);
       setHasError(true);
+      toast.error(error?.response?.data?.message);
     }
   };
 
