@@ -17,8 +17,15 @@ export const PasswordReset = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
+    if (password !== confirmPassword) {
+      toast.error('Password unmathed');
+    }
+
     try {
-      const result = await authService.resetPassword({});
+      const result = await authService.resetPassword({
+        password,
+        confirmPassword
+      });
 
       toast.success(result.data.message);
       setLoading(false);
