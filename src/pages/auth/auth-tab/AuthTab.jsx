@@ -15,16 +15,16 @@ const AuthTab = () => {
         <Row className="row">
           <Col className="row" ms={12}>
             <div className="tabs-auth">
-              <ul className="tab-group">
-                <li className={`tab ${type === 'Sign In' ? 'active' : ''}`} onClick={() => setType('Sign In')}>
-                  <button className="login-btn">Sign In</button>
-                </li>
-                <li className={`tab ${type === 'Sign Up' ? 'active' : ''}`} onClick={() => setType('Sign Up')}>
-                  <button className="register-btn">Sign Up</button>
-                </li>
-              </ul>
               <div className="card-container">
                 <Card className="card-wrap">
+                  <ul className="tab-group">
+                    <li className={`tab ${type === 'Sign In' ? 'active' : ''}`} onClick={() => setType('Sign In')}>
+                      <button className="login-btn">Sign In</button>
+                    </li>
+                    <li className={`tab ${type === 'Sign Up' ? 'active' : ''}`} onClick={() => setType('Sign Up')}>
+                      <button className="register-btn">Sign Up</button>
+                    </li>
+                  </ul>
                   {type === 'Sign In' && (
                     <div className="tab-item">
                       <Login />
