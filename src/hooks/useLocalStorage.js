@@ -12,10 +12,10 @@ const useLocalStorage = (key, type) => {
       const deleteValue = () => {
         window.localStorage.removeItem(key);
       };
-  //     return [deleteValue];
-  //   }
-  // } catch (error) {
-  //   console.log(error);
-  // }
+      return [deleteValue];
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 export default useLocalStorage;
