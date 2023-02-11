@@ -9,6 +9,7 @@
       "@hooks/*": ["src/@hooks/*"],
       "@services/*": ["src/@services/*"],
       "@redux/*": ["src/@redux-toolkit/*"],
+      "@mocks/*": ["src/@mocks/*"],
       "@root/*": ["src/*"]
     }
   }
