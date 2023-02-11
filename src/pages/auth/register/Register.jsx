@@ -6,7 +6,7 @@ import { authService } from '@services/APIs/auth/authService';
 import { Utils } from '@services/utils/utilsService';
 import { toast } from 'react-toastify';
 import { Card } from '@components/card/Card';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import '@pages/auth/register/Register.scss';
 
@@ -18,6 +18,7 @@ export const Register = () => {
   const [loading, setLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [user, setUser] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -56,10 +57,10 @@ export const Register = () => {
   useEffect(() => {
     if (loading && !user) return;
     if (user) {
-      console.log('Navigate to login page');
+      navigate('/app/social/streams');
       setLoading(false);
     }
-  }, [loading, user]);
+  }, [loading, user, navigate]);
 
   return (
     <Container className="register-container">
@@ -118,7 +119,7 @@ export const Register = () => {
           <hr />
           <div className="remarks-wrap">
             <div className="remark-text">Already Registered</div> &nbsp; &nbsp; &nbsp;
-            <Link to={'/login'} style={{ textDecoration: 'none', color: '#722ed1' }}>
+            <Link to={'/'} style={{ textDecoration: 'none', color: '#722ed1' }}>
               Log In
             </Link>
           </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@components/Button/Button';
 import { Input } from '@components/input/Input';
 import { toast } from 'react-toastify';
@@ -15,6 +15,7 @@ export const Login = () => {
   const [keepLoggedIn, setKeepLoggedIn] = useState('');
   const [user, setUser] = useState('');
   const [hasError, setHasError] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -41,10 +42,10 @@ export const Login = () => {
   useEffect(() => {
     if (loading && !user) return;
     if (user) {
-      console.log('Navigate to login page');
+      navigate('/app/social/streams');
       setLoading(false);
     }
-  }, [loading, user]);
+  }, [loading, user, navigate]);
 
   return (
     <Container className="login-container">

@@ -5,11 +5,7 @@ import Streams from '@pages/social/streams/Streams';
 export const AppRouter = () => {
   const elements = useRoutes([
     {
-      path: '/'
-      // element: />
-    },
-    {
-      path: '/login',
+      path: '/',
       element: <Login />
     },
     {
@@ -25,7 +21,7 @@ export const AppRouter = () => {
       element: <PasswordReset />
     },
     {
-      path: '/app/social',
+      path: '/app/social/streams',
       element: <Streams />
     }
   ]);
