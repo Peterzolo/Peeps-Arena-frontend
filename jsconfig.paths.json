@@ -2,13 +2,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "path": {
-      "@components/*": ["@components/*"],
-      "@pages/*": ["@pages/*"],
-      "@assests/*": ["@assests/*"],
-      "@colors/*": ["@colors/*"],
-      "@hooks/*": ["@hooks/*"],
-      "@services/*": ["@services/*"],
-      "@redux/*": ["@redux/*"]
+      "@components/*": ["src/@components/*"],
+      "@pages/*": ["src/@pages/*"],
+      "@assests/*": ["src/@assests/*"],
+      "@colors/*": ["src/@colors/*"],
+      "@hooks/*": ["src/@hooks/*"],
+      "@services/*": ["src/@services/*"],
+      "@redux/*": ["src/@redux/*"]
     }
   }
 }
