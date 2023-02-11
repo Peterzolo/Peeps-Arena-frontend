@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 import { Card } from '@components/card/Card';
 import { Link } from 'react-router-dom';
 
-import './Register.scss';
+import '@pages/auth/register/Register.scss';
 
 export const Register = () => {
   const [username, setUsername] = useState('');

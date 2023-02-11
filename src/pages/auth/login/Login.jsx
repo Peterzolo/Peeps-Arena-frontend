@@ -6,7 +6,7 @@ import { Input } from '@components/input/Input';
 import { toast } from 'react-toastify';
 import { authService } from '@services/APIs/auth/authService';
 import { Card } from '@components/card/Card';
-import './Login.scss';
+import '@pages/auth/login/Login.scss';
 
 export const Login = () => {
   const [username, setUsername] = useState('');

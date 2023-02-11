@@ -7,7 +7,7 @@ import { Card } from '@components/card/Card';
 import { toast } from 'react-toastify';
 import { authService } from '@services/APIs/auth/authService';
 
-import './ForgotPassword.scss';
+import '@pages/auth/auth-tab/forgot-password/ForgotPassword.scss';
 
 export const ForgotPassword = () => {
   const [loading, setLoading] = useState(false);
