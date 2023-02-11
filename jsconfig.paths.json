@@ -5,7 +5,10 @@
       "@components/*": ["@components/*"],
       "@pages/*": ["@pages/*"],
       "@assests/*": ["@assests/*"],
-      "@colors/*": ["@colors/*"]
+      "@colors/*": ["@colors/*"],
+      "@hooks/*": ["@hooks/*"],
+      "@services/*": ["@services/*"],
+      "@redux/*": ["@redux/*"]
     }
   }
 }
