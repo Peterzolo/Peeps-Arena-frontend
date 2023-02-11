@@ -4,7 +4,7 @@ import { Theme } from './components/theme/ThemeProvider';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AppRouter } from './routes';
-import './App.scss';
+import '@root/App.scss';
 const App = () => {
   return (
     <div>
