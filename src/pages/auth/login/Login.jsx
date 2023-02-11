@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { Button } from '../../../components/Button/Button';
-import { Input } from '../../../components/input/Input';
+import { Button } from '@components/Button/Button';
+import { Input } from '@components/input/Input';
 import { toast } from 'react-toastify';
-import { authService } from '../../../services/APIs/auth/authService';
-import { Card } from '../../../components/card/Card';
+import { authService } from '@services/APIs/auth/authService';
+import { Card } from '@components/card/Card';
 import './Login.scss';
 
 export const Login = () => {

@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link, useSearchParams, useNavigate } from 'react-router-dom';
-import { Button } from '../../../../components/Button/Button';
-import { Input } from '../../../../components/input/Input';
-import { Card } from '../../../../components/card/Card';
+import { Button } from '@components/Button/Button';
+import { Input } from '@components/input/Input';
+import { Card } from '@components/card/Card';
 import { toast } from 'react-toastify';
 
 import './PasswordReset.scss';
-import { authService } from '../../../../services/APIs/auth/authService';
+import { authService } from '@services/APIs/auth/authService';
 export const PasswordReset = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');

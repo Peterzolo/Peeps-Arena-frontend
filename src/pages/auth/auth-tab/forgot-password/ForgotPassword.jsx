@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { Button } from '../../../../components/Button/Button';
-import { Input } from '../../../../components/input/Input';
-import { Card } from '../../../../components/card/Card';
+import { Button } from '@components/Button/Button';
+import { Input } from '@components/input/Input';
+import { Card } from '@components/card/Card';
 import { toast } from 'react-toastify';
-import { authService } from '../../../../services/APIs/auth/authService';
+import { authService } from '@services/APIs/auth/authService';
 
 import './ForgotPassword.scss';
 

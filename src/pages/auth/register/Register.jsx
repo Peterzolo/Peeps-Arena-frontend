@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { Button } from '../../../components/Button/Button';
-import { Input } from '../../../components/input/Input';
-import { authService } from '../../../services/APIs/auth/authService';
-import { Utils } from '../../../services/utils/utilsService';
+import { Button } from '@components/Button/Button';
+import { Input } from '@components/input/Input';
+import { authService } from '@services/APIs/auth/authService';
+import { Utils } from '@services/utils/utilsService';
 import { toast } from 'react-toastify';
-import { Card } from '../../../components/card/Card';
+import { Card } from '@components/card/Card';
 import { Link } from 'react-router-dom';
 
 import './Register.scss';
