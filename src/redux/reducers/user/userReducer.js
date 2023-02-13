@@ -14,10 +14,10 @@ const userSlice = createSlice({
       state.token = token;
       state.profile = profile;
     }
-    // clearUser: (state) => {
-    //   state.token = '';
-    //   state.profile = null;
-    // },
+    clearUser: (state) => {
+      state.token = '';
+      state.profile = null;
+    },
     // updateUserProfile: (state, action) => {
     //   state.profile = action.payload;
     // }
