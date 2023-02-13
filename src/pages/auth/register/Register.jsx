@@ -9,6 +9,7 @@ import { Card } from '@components/card/Card';
 import { Link, useNavigate } from 'react-router-dom';
 
 import '@pages/auth/register/Register.scss';
+import { useLocalStorage } from 'src/hooks/useLocalStorage';
 
 export const Register = () => {
   const [username, setUsername] = useState('');
@@ -38,7 +39,7 @@ export const Register = () => {
           avatarImage
         });
 
-        // setStoredUsername(username);
+        setStoredUsername(username);
         toast.success(result.data.message);
         setUser(result.data.user);
         // Utils.dispatchUser(result, pageReload, dispatch, setUser);
