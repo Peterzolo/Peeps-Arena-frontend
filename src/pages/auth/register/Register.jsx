@@ -9,7 +9,7 @@ import { Card } from '@components/card/Card';
 import { Link, useNavigate } from 'react-router-dom';
 
 import '@pages/auth/register/Register.scss';
-import { useLocalStorage } from 'src/hooks/useLocalStorage';
+import { useLocalStorage } from '@hooks/useLocalStorage';
 
 export const Register = () => {
   const [username, setUsername] = useState('');
