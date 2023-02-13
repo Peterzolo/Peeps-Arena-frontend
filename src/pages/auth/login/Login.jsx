@@ -8,6 +8,8 @@ import { authService } from '@services/APIs/auth/authService';
 import { Card } from '@components/card/Card';
 import '@pages/auth/login/Login.scss';
 import { useLocalStorage } from '@hooks/useLocalStorage';
+import { Utils } from '@services/utils/utilsService';
+import { useSessionStorage } from 'src/hooks/useSessionStorage';
 
 export const Login = () => {
   const [username, setUsername] = useState('');
@@ -19,6 +21,7 @@ export const Login = () => {
   const navigate = useNavigate();
   const [setStoredUsername] = useLocalStorage('username', 'set');
   const [setLoggedIn] = useLocalStorage('keepLoggedIn', 'set');
+  const [pageReload] = useSessionStorage('pageReload', 'set');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -31,9 +34,8 @@ export const Login = () => {
       setLoggedIn(keepLoggedIn);
       setStoredUsername(username);
       toast.success(result.data.message);
-
       setUser(result.data.user);
-      // Utils.dispatchUser(result, pageReload, dispatch, setUser);
+      Utils.dispatchUser(result, pageReload);
       setLoading(false);
     } catch (error) {
       setLoading(false);
