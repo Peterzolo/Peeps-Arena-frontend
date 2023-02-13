@@ -18,9 +18,9 @@ const userSlice = createSlice({
       state.token = '';
       state.profile = null;
     },
-    // updateUserProfile: (state, action) => {
-    //   state.profile = action.payload;
-    // }
+    updateUserProfile: (state, action) => {
+      state.profile = action.payload;
+    }
   }
 });
 
