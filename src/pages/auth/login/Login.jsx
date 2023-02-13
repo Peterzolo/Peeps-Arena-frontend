@@ -10,6 +10,7 @@ import '@pages/auth/login/Login.scss';
 import { useLocalStorage } from '@hooks/useLocalStorage';
 import { Utils } from '@services/utils/utilsService';
 import { useSessionStorage } from 'src/hooks/useSessionStorage';
+import { useDispatch } from 'react-redux';
 
 export const Login = () => {
   const [username, setUsername] = useState('');
@@ -22,6 +23,7 @@ export const Login = () => {
   const [setStoredUsername] = useLocalStorage('username', 'set');
   const [setLoggedIn] = useLocalStorage('keepLoggedIn', 'set');
   const [pageReload] = useSessionStorage('pageReload', 'set');
+  const dispatch = useDispatch();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -35,7 +37,7 @@ export const Login = () => {
       setStoredUsername(username);
       toast.success(result.data.message);
       setUser(result.data.user);
-      Utils.dispatchUser(result, pageReload);
+      Utils.dispatchUser(result, pageReload, dispatch);
       setLoading(false);
     } catch (error) {
       setLoading(false);
