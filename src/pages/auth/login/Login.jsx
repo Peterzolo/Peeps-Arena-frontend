@@ -28,8 +28,7 @@ export const Login = () => {
         username,
         password
       });
-
-      setLoggedIn(true);
+      setLoggedIn(keepLoggedIn);
       setStoredUsername(username);
       toast.success(result.data.message);
 
