@@ -18,6 +18,7 @@ export const Login = () => {
   const [hasError, setHasError] = useState(false);
   const navigate = useNavigate();
   const [setStoredUsername] = useLocalStorage('username', 'set');
+  const [setLoggedIn] = useLocalStorage('keepLoggedIn', 'set');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -28,7 +29,7 @@ export const Login = () => {
         password
       });
 
-      // setLoggedIn(true);
+      setLoggedIn(true);
       setStoredUsername(username);
       toast.success(result.data.message);
 
