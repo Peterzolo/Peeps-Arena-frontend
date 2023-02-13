@@ -48,7 +48,7 @@ export const Register = () => {
         setLoggedIn(true);
         toast.success(result.data.message);
         setUser(result.data.user);
-        // Utils.dispatchUser(result, pageReload, dispatch, setUser);
+        Utils.dispatchUser(result, pageReload, dispatch, setUser);
         setPassword('');
         setEmail('');
         setUsername('');
