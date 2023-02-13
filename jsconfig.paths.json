@@ -8,7 +8,7 @@
       "@colors/*": ["src/@colors/*"],
       "@hooks/*": ["src/@hooks/*"],
       "@services/*": ["src/@services/*"],
-      "@redux/*": ["src/@redux-toolkit/*"],
+      "@redux/*": ["src/@redux/*"],
       "@mocks/*": ["src/@mocks/*"],
       "@root/*": ["src/*"]
     }
