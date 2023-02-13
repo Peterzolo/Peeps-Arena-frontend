@@ -4,3 +4,8 @@ const initialState = {
   token: '',
   profile: null
 };
+
+const userSlice = createSlice({
+  name: 'user',
+  initialState
+});
