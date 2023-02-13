@@ -8,7 +8,8 @@ const initialState = {
 const userSlice = createSlice({
   name: 'user',
   initialState
-  reducers : (state, action) =>{
-
+  reducers :{
+    addUser : (state, action) =>{
+const {token, profile} = action.payload
   }
 });
