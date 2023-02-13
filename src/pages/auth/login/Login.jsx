@@ -36,8 +36,7 @@ export const Login = () => {
       setLoggedIn(keepLoggedIn);
       setStoredUsername(username);
       toast.success(result.data.message);
-      setUser(result.data.user);
-      Utils.dispatchUser(result, pageReload, dispatch);
+      Utils.dispatchUser(result, pageReload, dispatch, setUser);
       setLoading(false);
     } catch (error) {
       setLoading(false);
