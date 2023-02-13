@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import { authService } from '@services/APIs/auth/authService';
 import { Card } from '@components/card/Card';
 import '@pages/auth/login/Login.scss';
+import { useLocalStorage } from 'src/hooks/useLocalStorage';
 
 export const Login = () => {
   const [username, setUsername] = useState('');
@@ -16,6 +17,7 @@ export const Login = () => {
   const [user, setUser] = useState('');
   const [hasError, setHasError] = useState(false);
   const navigate = useNavigate();
+  const [setStoredUsername] = useLocalStorage('username', 'set');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -27,7 +29,7 @@ export const Login = () => {
       });
 
       // setLoggedIn(true);
-      // setStoredUsername(username);
+      setStoredUsername(username);
       toast.success(result.data.message);
 
       setUser(result.data.user);
