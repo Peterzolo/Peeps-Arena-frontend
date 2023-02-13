@@ -10,6 +10,8 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import '@pages/auth/register/Register.scss';
 import { useLocalStorage } from '@hooks/useLocalStorage';
+import { useSessionStorage } from 'src/hooks/useSessionStorage';
+import { useDispatch } from 'react-redux';
 
 export const Register = () => {
   const [username, setUsername] = useState('');
@@ -22,6 +24,8 @@ export const Register = () => {
   const navigate = useNavigate();
   const [setStoredUsername] = useLocalStorage('username', 'set');
   const [setLoggedIn] = useLocalStorage('keepLoggedIn', 'set');
+  const [pageReload] = useSessionStorage('pageReload', 'set');
+  const dispatch = useDispatch();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
