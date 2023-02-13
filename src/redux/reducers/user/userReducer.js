@@ -8,12 +8,12 @@ const initialState = {
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  // reducers: {
-  //   addUser: (state, action) => {
-  //     const { token, profile } = action.payload;
-  //     state.token = token;
-  //     state.profile = profile;
-  //   },
+  reducers: {
+    addUser: (state, action) => {
+      const { token, profile } = action.payload;
+      state.token = token;
+      state.profile = profile;
+    }
     // clearUser: (state) => {
     //   state.token = '';
     //   state.profile = null;
