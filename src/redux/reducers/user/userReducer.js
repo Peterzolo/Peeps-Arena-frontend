@@ -5,9 +5,9 @@ const initialState = {
   profile: null
 };
 
-// const userSlice = createSlice({
-//   name: 'user',
-//   initialState,
+const userSlice = createSlice({
+  name: 'user',
+  initialState,
   // reducers: {
   //   addUser: (state, action) => {
   //     const { token, profile } = action.payload;
