@@ -21,6 +21,7 @@ export const Register = () => {
   const [user, setUser] = useState('');
   const navigate = useNavigate();
   const [setStoredUsername] = useLocalStorage('username', 'set');
+  const [setLoggedIn] = useLocalStorage('keepLoggedIn', 'set');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
