@@ -7,7 +7,6 @@ import { Utils } from '@services/utils/utilsService';
 import { toast } from 'react-toastify';
 import { Card } from '@components/card/Card';
 import { Link, useNavigate } from 'react-router-dom';
-
 import '@pages/auth/register/Register.scss';
 import { useLocalStorage } from '@hooks/useLocalStorage';
 import { useSessionStorage } from 'src/hooks/useSessionStorage';
