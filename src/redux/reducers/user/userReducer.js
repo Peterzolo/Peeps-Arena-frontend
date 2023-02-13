@@ -13,7 +13,7 @@ const userSlice = createSlice({
       const { token, profile } = action.payload;
       state.token = token;
       state.profile = profile;
-    }
+    },
     clearUser: (state) => {
       state.token = '';
       state.profile = null;
