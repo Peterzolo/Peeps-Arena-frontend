@@ -19,6 +19,7 @@ export const Register = () => {
   const [hasError, setHasError] = useState(false);
   const [user, setUser] = useState('');
   const navigate = useNavigate();
+  const [setStoredUsername] = useLocalStorage('username', 'set');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
