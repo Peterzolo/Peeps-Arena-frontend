@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 import { authService } from '@services/APIs/auth/authService';
 import { Card } from '@components/card/Card';
 import '@pages/auth/login/Login.scss';
-import { useLocalStorage } from 'src/hooks/useLocalStorage';
+import { useLocalStorage } from '@hooks/useLocalStorage';
 
 export const Login = () => {
   const [username, setUsername] = useState('');
