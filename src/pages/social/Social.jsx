@@ -11,7 +11,7 @@ const Social = () => {
         <div className="dashboard-sidebar">
           <div className="side-bar">SIDE BAR</div>
         </div>
-        <div className="sidebar-content">
+        <div className="dashboard-content">
           <Outlet />
         </div>
       </div>
