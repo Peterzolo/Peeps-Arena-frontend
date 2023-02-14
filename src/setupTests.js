@@ -7,3 +7,8 @@ import '@testing-library/jest-dom';
 import 'jest-canvas-mock';
 
 import { server } from './mocks/server';
+
+beforeAll(() => {
+  // Establish requests interception layer before all tests.
+  server.listen();
+});
