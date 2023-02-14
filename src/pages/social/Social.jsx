@@ -1,6 +1,7 @@
 import React from 'react';
 
 import '@pages/social/Social.scss';
+import { Outlet } from 'react-router-dom';
 
 const Social = () => {
   return (
@@ -9,6 +10,9 @@ const Social = () => {
       <div className="dashboard">
         <div className="dashboard-sidebar">
           <div className="side-bar">SIDE BAR</div>
+        </div>
+        <div className="sidebar-content">
+          <Outlet />
         </div>
       </div>
     </>
