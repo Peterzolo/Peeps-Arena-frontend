@@ -6,4 +6,4 @@ import '@testing-library/jest-dom';
 
 import 'jest-canvas-mock';
 
-import { server } from '@mocks/server';
+import { server } from './mocks/server';
