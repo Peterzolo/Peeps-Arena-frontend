@@ -1,7 +1,7 @@
 import { useRoutes } from 'react-router-dom';
 import { ForgotPassword, Login, PasswordReset, Register } from '@pages/auth/index';
 import Streams from '@pages/social/streams/Streams';
-import Social from './pages/social/Social';
+import Social from '@pages/social/Social';
 
 export const AppRouter = () => {
   const elements = useRoutes([
@@ -24,7 +24,7 @@ export const AppRouter = () => {
     {
       path: '/app/social',
       element: <Social />,
-      children: [{ path: '/streams', element: <Streams /> }]
+      children: [{ path: 'streams', element: <Streams /> }]
     }
   ]);
 
