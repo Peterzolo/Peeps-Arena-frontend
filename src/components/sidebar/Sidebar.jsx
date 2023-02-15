@@ -15,7 +15,12 @@ const Sidebar = () => {
         <ul className="list-unstyled">
           {sidebar.map((data) => (
             <li key={data.index}>
-              <div className="sidebar-link"></div>
+              <div className="sidebar-link">
+                <div className="menu-icon"> {fontAwesomeIcons[data.iconName]}</div>
+                <div className="menu-link">
+                  <span>{`${data.name}`}</span>
+                </div>
+              </div>
             </li>
           ))}
         </ul>
