@@ -8,6 +8,7 @@ const Streams = () => {
         <div className="streams-post">
           <div className="post-form">Post Form</div>
           <div className="post-items">Posts Items</div>
+          <div style={{ marginBottom: '50px', height: '50px' }}></div>
         </div>
       </div>
     </div>
