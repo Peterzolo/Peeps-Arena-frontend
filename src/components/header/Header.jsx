@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '@components/header/Header.scss';
 import Avatar from '../avatar/Avatar';
+import { FaCaretDown, FaCaretUp, FaRegBell, FaRegEnvelope } from 'react-icons/fa';
 
 const logo = 'LOGO';
 const messageCount = 10;
@@ -33,7 +34,7 @@ const Header = () => {
           <ul className="header-nav">
             <li data-testid="notification-list-item" className="header-nav-item active-item">
               <span className="header-list-name">
-                {/* <FaRegBell className="header-list-icon" /> */}
+                <FaRegBell className="header-list-icon" />
                 {/* {notificationCount > 0 && ( */}
                 <span className="bg-danger-dots dots" data-testid="notification-dots">
                   {/* {notificationCount} */}
@@ -65,7 +66,7 @@ const Header = () => {
             <li data-testid="message-list-item" className="header-nav-item active-item">
               {' '}
               <span className="header-list-name">
-                {/* <FaRegEnvelope className="header-list-icon" /> */}
+                <FaRegEnvelope className="header-list-icon" />
                 {messageCount > 0 && <span className="bg-danger-dots dots" data-testid="messages-dots"></span>}
               </span>
               &nbsp;
@@ -82,6 +83,34 @@ const Header = () => {
                 // avatarSrc={profile?.profilePicture}
                 />
               </span>
+              <span className="header-list-name profile-name">
+                {/* {profile?.username} */}
+                {/* {!isSettingsActive ? ( */}
+                <FaCaretDown className="header-list-icon caret" />
+                {/* ) : ( */}
+                <FaCaretUp className="header-list-icon caret" />
+                {/* )} */}
+              </span>{' '}
+              {/* {isSettingsActive && ( */}
+              {/* <ul className="dropdown-ul" ref={settingsRef}> */}
+              <ul className="dropdown-ul">
+                <li className="dropdown-li">
+                  {/* <Dropdown */}
+                  <div
+                    height={300}
+                    style={{ right: '150px', top: '40px' }}
+                    // data={settings}
+                    // notificationCount={0}
+                    title="Settings"
+                    // onLogout={onLogout}
+                    // onNavigate={() => ProfileUtils.navigateToProfile(profile, navigate)}
+                  />
+                </li>
+              </ul>
+              {/* )} */}
+              <ul className="dropdown-ul">
+                <li className="dropdown-li"></li>
+              </ul>
             </li>
           </ul>
         </div>
