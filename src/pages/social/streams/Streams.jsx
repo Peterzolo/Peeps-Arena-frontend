@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '@pages/social/streams/Streams.scss';
 
 const Streams = () => {
+  const bodyRef = useRef(null);
+  const bottomLineRef = useRef();
   return (
     <div className="streams">
       <div className="streams-content">
