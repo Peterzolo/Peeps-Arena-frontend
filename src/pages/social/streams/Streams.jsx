@@ -12,6 +12,9 @@ const Streams = () => {
           <div className="post-items">Posts Items</div>
           <div style={{ marginBottom: '50px', height: '50px' }} ref={bottomLineRef}></div>
         </div>
+        <div className="streams-suggestions">
+          <div className="suggestions"></div>
+        </div>
       </div>
     </div>
   );
