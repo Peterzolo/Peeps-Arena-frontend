@@ -14,7 +14,9 @@ const Sidebar = () => {
       <div className="side-menu">
         <ul className="list-unstyled">
           {sidebar.map((data) => (
-            <li key={data.index}></li>
+            <li key={data.index}>
+              <div className="sidebar-link"></div>
+            </li>
           ))}
         </ul>
       </div>
