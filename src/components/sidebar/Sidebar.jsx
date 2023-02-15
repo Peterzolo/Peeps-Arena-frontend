@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { sideBarItems, fontAwesomeIcons } from '@services/utils/static.data';
-import '@component/sidebar.Sidebar.scss';
+import '@components/sidebar/Sidebar.scss';
 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState([]);
