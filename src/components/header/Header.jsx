@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '@components/header/Header.scss';
 import { Avatar } from '../avatar/Avatar';
@@ -8,6 +8,7 @@ const logo = 'LOGO';
 const messageCount = 10;
 
 const Header = () => {
+  const [environment, setEnvironment] = useState('');
   const navigate = useNavigate();
   return (
     <>
