@@ -21,7 +21,7 @@ const Sidebar = () => {
         <ul className="list-unstyled">
           {sidebar.map((data) => (
             <li key={data.index}>
-              <div className="sidebar-link">
+              <div className={`sidebar-link ${checkUrl(data.name) ? 'active' : ''}`}>
                 <div className="menu-icon"> {fontAwesomeIcons[data.iconName]}</div>
                 <div className="menu-link">
                   <span>{`${data.name}`}</span>

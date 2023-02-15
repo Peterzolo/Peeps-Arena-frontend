@@ -1,8 +1,9 @@
 @mixin sidebar-styles {
-  background-color: var(--white-1);
-  border: 1px solid var(--white-2);
+  // background-color: var(--secondary-1);
+  background-color: transparent;
+  border: 1px solid var(--secondary-1);
   color: var(--dark-blue-2);
-  border-radius: 50px;
+  border-radius: 10px;
   text-decoration: none;
 }
 
@@ -41,7 +42,7 @@
 
             .menu-icon {
               .icon {
-                color: var(--primary-1);
+                color: var(--menuIcon-1);
               }
             }
           }
@@ -60,7 +61,7 @@
         .menu-icon {
           margin-top: 5px;
           .icon {
-            color: var(--gray-13);
+            color: var(--orange-1);
             font-weight: 500;
             width: 20px;
           }
@@ -70,7 +71,7 @@
           padding-left: 0.8rem;
 
           span {
-            color: var(--gray-13);
+            color: var(--primary-1);
             font-weight: 500;
             font-size: 1rem;
           }
