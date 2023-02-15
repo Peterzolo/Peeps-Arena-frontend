@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '@components/header/Header.scss';
+import Avatar from '../avatar/Avatar';
 
 const logo = 'LOGO';
+const messageCount = 10;
+
 const Header = () => {
   const navigate = useNavigate();
   return (
@@ -62,14 +65,24 @@ const Header = () => {
             <li data-testid="message-list-item" className="header-nav-item active-item">
               {' '}
               <span className="header-list-name">
-                <FaRegEnvelope className="header-list-icon" />
+                {/* <FaRegEnvelope className="header-list-icon" /> */}
                 {messageCount > 0 && <span className="bg-danger-dots dots" data-testid="messages-dots"></span>}
               </span>
               &nbsp;
             </li>
 
             {/* /////////// */}
-            <li data-testid="settings-list-item" className="header-nav-item"></li>
+            <li data-testid="settings-list-item" className="header-nav-item">
+              <span className="header-list-name profile-image">
+                <Avatar
+                // name={profile?.username}
+                // bgColor={profile?.avatarColor}
+                // textColor="#ffffff"
+                // size={40}
+                // avatarSrc={profile?.profilePicture}
+                />
+              </span>
+            </li>
           </ul>
         </div>
       </div>
