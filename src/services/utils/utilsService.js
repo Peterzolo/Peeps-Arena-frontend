@@ -40,4 +40,15 @@ export class Utils {
     deleteSessionPageReload();
     setLoggedIn(false);
   }
+
+  static appEnvironment() {
+    const env = process.env.REACT_APP_ENVIRONMENT;
+    if (env === 'local') {
+      return 'LOCAL';
+    } else if (env === 'development') {
+      return 'DEV';
+    } else if (env === 'staging') {
+      return 'STG';
+    }
+  }
 }
