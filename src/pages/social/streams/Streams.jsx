@@ -9,7 +9,7 @@ const Streams = () => {
 
   useEffect(() => {
     dispatch(getUserSuggestions());
-  });
+  }, [dispatch]);
   const bodyRef = useRef(null);
   const bottomLineRef = useRef();
   return (
