@@ -1,8 +1,8 @@
 import React from 'react';
-import '@components/suggestions/Suggestiions.scss';
 import { Avatar } from '@components/avatar/Avatar';
-import { Button } from '@components/button/Button';
+import { Button } from '@components/Button/Button';
 import { useNavigate } from 'react-router-dom';
+import '@components/suggestions/Suggestions.scss';
 
 const users = [];
 

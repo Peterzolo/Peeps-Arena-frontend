@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import '@pages/social/streams/Streams.scss';
+import Suggestions from 'src/components/suggestions/Suggestions';
 
 const Streams = () => {
   const bodyRef = useRef(null);
@@ -13,7 +14,9 @@ const Streams = () => {
           <div style={{ marginBottom: '50px', height: '50px' }} ref={bottomLineRef}></div>
         </div>
         <div className="streams-suggestions">
-          <div className="suggestions"></div>
+          <div className="suggestions">
+            <Suggestions />{' '}
+          </div>
         </div>
       </div>
     </div>

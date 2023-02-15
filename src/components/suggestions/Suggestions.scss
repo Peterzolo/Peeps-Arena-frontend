@@ -22,11 +22,12 @@
     height: 50px;
 
     .title-text {
-      @include title-text-styles;
-
+      // @include title-text-styles;
+      color: var(--primary-1);
       font-weight: 600;
       font-size: 18px;
       padding-left: 20px;
+      text-align: center;
     }
   }
 
@@ -63,7 +64,7 @@
         .title-text {
           @include title-text-styles;
 
-          color: var(--black-3);
+          color: var(--primary-1);
           font-weight: 600;
           font-size: 14px;
           margin-left: 10px;
