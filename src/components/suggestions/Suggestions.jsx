@@ -1,7 +1,7 @@
 import React from 'react';
 import '@components/suggestions/Suggestiions.scss';
-import { Avatar } from '../avatar/Avatar';
-import { Button } from 'react-bootstrap';
+import { Avatar } from '@components/avatar/Avatar';
+import { Button } from '@components/button/Button';
 import { useNavigate } from 'react-router-dom';
 
 const users = [];
