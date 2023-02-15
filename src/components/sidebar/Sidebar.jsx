@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { sideBarItems, fontAwesomeIcons } from '@services/utils/static.data';
 import '@components/sidebar/Sidebar.scss';
+import { useLocation } from 'react-router-dom';
 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState([]);
+  const location = useLocation();
+
+  const checkUrl = (name) => {
+    return location.pathname.includes(name.toLowerCase());
+  };
 
   useEffect(() => {
     setSidebar(sideBarItems);
