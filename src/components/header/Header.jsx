@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '@components/header/Header.scss';
-import Avatar from '../avatar/Avatar';
+import { Avatar } from '../avatar/Avatar';
 import { FaCaretDown, FaCaretUp, FaRegBell, FaRegEnvelope } from 'react-icons/fa';
 
 const logo = 'LOGO';
