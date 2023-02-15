@@ -7,7 +7,7 @@ const Streams = () => {
   return (
     <div className="streams">
       <div className="streams-content">
-        <div className="streams-post" ref={bodyRef}>
+        <div className="streams-post" ref={bodyRef} style={{ backgroundColor: 'lightgrey' }}>
           <div className="post-form">Post Form</div>
           <div className="post-items">Posts Items</div>
           <div style={{ marginBottom: '50px', height: '50px' }} ref={bottomLineRef}></div>
