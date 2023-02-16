@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Avatar } from '@components/avatar/Avatar';
 import { Button } from '@components/Button/Button';
 import { useNavigate } from 'react-router-dom';
@@ -7,8 +7,13 @@ import { useSelector } from 'react-redux';
 
 const Suggestions = () => {
   const [users, setUsers] = useState([]);
-  const { Suggestions } = useSelector((state) => state);
+  const { suggestions } = useSelector((state) => state);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setUsers(suggestions?.users);
+  }, [suggestions, users]);
+
   return (
     <div className="suggestions-list-container" data-testid="suggestions-container">
       <div className="suggestions-header">
