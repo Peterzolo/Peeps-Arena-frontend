@@ -37,8 +37,12 @@ const Suggestions = () => {
       <hr />
       <div className="suggestion-box">
         <div className="suggestion-items">
-          <div className="avatar"></div>
-          <Button className="button" />
+          <div className="left-item">
+            <div className="avatar">Avatar</div>
+            <Button className="button" />
+          </div>
+
+          <div className="right-item">Right</div>
         </div>
       </div>
     </div>

@@ -8,6 +8,19 @@
   }
   .suggestion-box {
     .suggestion-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .left-item {
+        background-color: aquamarine;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      .right-item {
+        background-color: aquamarine;
+        padding: 5px;
+        border-radius: 5px;
+      }
     }
   }
 }
