@@ -1,4 +1,4 @@
-// import { Avatar } from '@components/avatar/Avatar';
+import { Avatar } from '@components/avatar/Avatar';
 import { Button } from '@components/Button/Button';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -36,14 +36,28 @@ const Suggestions = () => {
       <div className="title">Suggestions</div>
       <hr />
       <div className="suggestion-box">
-        <div className="suggestion-items">
-          <div className="left-item">
-            <div className="avatar">Avatar</div>
-            <Button className="button" />
-          </div>
+        {users &&
+          users.map((user) => (
+            <div className="suggestion-items" key={user._id}>
+              <div className="left-item">
+                <div className="avatar">
+                  <Avatar
+                    name={user?.username}
+                    bgColor={user?.avatarColor}
+                    textColor="#ffffff"
+                    size={40}
+                    avatarSrc={user?.profilePicture}
+                  />
+                </div>
+                <div className="user-name">{user?.username}</div>
+              </div>
 
-          <div className="right-item">Right</div>
-        </div>
+              <div className="right-item">
+                {' '}
+                <Button className="button follow" label="Follow" />
+              </div>
+            </div>
+          ))}
       </div>
     </div>
   );
