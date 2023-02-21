@@ -5,7 +5,7 @@ import { userSerevice } from '@services/APIs/user/userService';
 const getUserSuggestions = createAsyncThunk('user/getSuggestions', async (name, { dispatch }) => {
   try {
     const response = await userSerevice.getUserSuggestions();
-    console.log('RESPONSE', response.data);
+    console.log('RESPONSE', response.data.users);
     return response.data;
   } catch (error) {
     console.log(error);
