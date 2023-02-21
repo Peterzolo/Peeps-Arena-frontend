@@ -1,5 +1,5 @@
 // import { Avatar } from '@components/avatar/Avatar';
-// import { Button } from '@components/Button/Button';
+import { Button } from '@components/Button/Button';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import { useNavigate } from 'react-router-dom';
@@ -35,7 +35,12 @@ const Suggestions = () => {
     <div className="main-container">
       <div className="title">Suggestions</div>
       <hr />
-      <div className="suggestion-box"></div>
+      <div className="suggestion-box">
+        <div className="suggestion-items">
+          <div className="avatar"></div>
+          <Button className="button" />
+        </div>
+      </div>
     </div>
   );
 };
