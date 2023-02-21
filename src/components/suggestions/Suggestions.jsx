@@ -1,5 +1,5 @@
 import { Avatar } from '@components/avatar/Avatar';
-import { Button } from '@components/Button/Button';
+// import { Button } from '@components/Button/Button';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -41,21 +41,23 @@ const Suggestions = () => {
         <div className="suggestions">
           {users?.map((user) => (
             <div className="suggestions-item" key={user?._id}>
-              <Avatar
-                name={user?.username}
-                bgColor={user?.avatarColor}
-                textColor="#ffffff"
-                size={40}
-                avatarSrc={user?.profilePicture}
-              />
-              <div className="title-text">{user?.username}</div>
+              <div className="avatar-wrapper">
+                <Avatar
+                  name={user?.username}
+                  bgColor={user?.avatarColor}
+                  textColor="#ffffff"
+                  size={40}
+                  avatarSrc={user?.profilePicture}
+                />
+                <div className="title-text">{user?.username}</div>
+              </div>
               <div className="add-icon">
-                <Button
+                {/* <Button
                   label="Follow"
                   className="button follow"
                   disabled={false}
-                  // handleClick={() => followUser(user)}
-                />
+                  handleClick={() => followUser(user)}
+                /> */}
               </div>
             </div>
           ))}

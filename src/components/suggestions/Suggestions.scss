@@ -2,6 +2,20 @@
   .suggestions-header {
     .title-text {
       color: red;
+      font-weight: bold;
+    }
+  }
+  .suggestions-container {
+    background-color: lightgrey;
+    .suggestions {
+      .suggestions-item {
+        .avatar-wrapper {
+          display: flex;
+          width: 200px;
+          justify-content: center;
+          align-items: center;
+        }
+      }
     }
   }
 }
