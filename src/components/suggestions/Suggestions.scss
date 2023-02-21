@@ -1,21 +1,11 @@
-.suggestions-list-container {
-  .suggestions-header {
-    .title-text {
-      color: red;
-      font-weight: bold;
-    }
+.main-container {
+  background-color: rgb(245, 249, 252);
+  padding: 10px;
+  .title {
+    color: orange;
+    font-weight: 700;
+    text-align: center;
   }
-  .suggestions-container {
-    background-color: lightgrey;
-    .suggestions {
-      .suggestions-item {
-        .avatar-wrapper {
-          display: flex;
-          width: 200px;
-          justify-content: center;
-          align-items: center;
-        }
-      }
-    }
+  .suggestion-box {
   }
 }
