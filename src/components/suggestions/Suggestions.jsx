@@ -59,6 +59,7 @@ const Suggestions = () => {
             </div>
           ))}
       </div>
+      {users.length > 3 && <div className="view-more">view more suggestions </div>}
     </div>
   );
 };
