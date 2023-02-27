@@ -33,7 +33,7 @@ export const AppRouter = () => {
         { path: 'people', element: <People /> },
         { path: 'followers', element: <Followers /> },
         { path: 'following', element: <Following /> },
-        { path: 'chat/message', element: <Chart /> },
+        { path: 'notification', element: <Notification /> },
         { path: 'chat/message', element: <Chart /> }
       ]
     }
