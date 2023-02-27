@@ -2,7 +2,7 @@ import { Avatar } from '@components/avatar/Avatar';
 import { Button } from '@components/Button/Button';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '@components/suggestions/Suggestions.scss';
 // import { Utils } from '@services/utils/utils.service';
 // import { FollowersUtils } from '@services/utils/followers-utils.service';
@@ -12,7 +12,7 @@ import '@components/suggestions/Suggestions.scss';
 const Suggestions = () => {
   const { suggestions } = useSelector((state) => state);
   const [users, setUsers] = useState([]);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
   const dispatch = useDispatch();
 
@@ -60,7 +60,7 @@ const Suggestions = () => {
           ))}
       </div>
       {users.length > 3 && (
-        <div className="view-more" onClick={() => navigate('/app/social/streams/people')}>
+        <div className="view-more" onClick={() => navigate('/app/social/people')}>
           view more suggestions{' '}
         </div>
       )}
