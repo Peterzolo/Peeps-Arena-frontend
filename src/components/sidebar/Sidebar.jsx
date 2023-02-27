@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { sideBarItems, fontAwesomeIcons } from '@services/utils/static.data';
 import '@components/sidebar/Sidebar.scss';
-import { useLocation } from 'react-router-dom';
+import { useLocation, createSearchParams, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState([]);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { profile } = useSelector((state) => state.user);
+
+  console.log('PROFILE', profile);
 
   const checkUrl = (name) => {
     return location.pathname.includes(name.toLowerCase());
@@ -15,14 +20,19 @@ const Sidebar = () => {
     setSidebar(sideBarItems);
   }, []);
 
-  const navigateToPage = (name, url) => {};
+  const navigateToPage = (name, url) => {
+    if (name === 'profile') {
+      url = `${url}/${profile?.username}?${createSearchParams({ id: profile?._id, uil: profile?.uid })}`;
+    }
+    navigate(url);
+  };
 
   return (
     <div className="app-side-menu">
       <div className="side-menu">
         <ul className="list-unstyled">
           {sidebar.map((data) => (
-            <li key={data.index} onClick={() => navigateToPage()}>
+            <li key={data.index} onClick={() => navigateToPage(data.name, data.url)}>
               <div className={`sidebar-link ${checkUrl(data.name) ? 'active' : ''}`}>
                 <div className="menu-icon"> {fontAwesomeIcons[data.iconName]}</div>
                 <div className="menu-link">
