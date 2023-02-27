@@ -1,5 +1,5 @@
 import React from 'react';
-import '@components/notification/Notification.scss';
+import '@pages/notification/Notification.scss';
 
 const Notification = () => {
   return <div>Notifications</div>;
