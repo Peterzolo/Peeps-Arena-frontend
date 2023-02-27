@@ -39,7 +39,8 @@ export const AppRouter = () => {
         { path: 'notification', element: <Notification /> },
         { path: 'chat/message', element: <Chart /> },
         { path: 'photos', element: <Photos /> },
-        { path: 'profile', element: <Profile /> }
+        { path: 'profile', element: <Profile /> },
+        { path: 'profile/:username', element: <Profile /> }
       ]
     }
   ]);

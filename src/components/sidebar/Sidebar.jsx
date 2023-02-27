@@ -15,12 +15,14 @@ const Sidebar = () => {
     setSidebar(sideBarItems);
   }, []);
 
+  const navigateToPage = (name, url) => {};
+
   return (
     <div className="app-side-menu">
       <div className="side-menu">
         <ul className="list-unstyled">
           {sidebar.map((data) => (
-            <li key={data.index}>
+            <li key={data.index} onClick={() => navigateToPage()}>
               <div className={`sidebar-link ${checkUrl(data.name) ? 'active' : ''}`}>
                 <div className="menu-icon"> {fontAwesomeIcons[data.iconName]}</div>
                 <div className="menu-link">
