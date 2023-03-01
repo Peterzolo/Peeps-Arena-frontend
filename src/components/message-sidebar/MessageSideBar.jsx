@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MessageSideBar = () => {
+const MessageSideBar = ({ profile, messageCount, messageNotifications, openChatPage }) => {
   return <div></div>;
 };
 
