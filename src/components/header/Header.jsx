@@ -61,9 +61,9 @@ const Header = () => {
 
           {/* //////////// */}
           <ul className="header-nav">
-            <li data-testid="notification-list-item" className="header-nav-item active-item">
+            <li className="header-nav-item active-item" onClick={() => setIsMessageActive(false)}>
               <span className="header-list-name">
-                <FaRegBell className="header-list-icon" />
+                <FaRegBell className="header-list-icon" onClick={() => setIsMessageActive(true)} />
                 {/* {notificationCount > 0 && ( */}
                 <span className="bg-danger-dots dots" data-testid="notification-dots">
                   {/* {notificationCount} */}
