@@ -33,12 +33,7 @@ const Header = () => {
       <div className="header-nav-wrapper" data-testid="header-wrapper">
         {isMessageActive && (
           <div ref={messageRef}>
-            <MessageSideBar
-              profile={profile}
-              messageCount={0}
-              messageNotifications={'hghghghg'}
-              openChatPage={openChatPage}
-            />
+            <MessageSideBar profile={profile} messageCount={0} messageNotifications={[]} openChatPage={openChatPage} />
           </div>
         )}
         <div className="header-navbar">
@@ -63,7 +58,7 @@ const Header = () => {
           <ul className="header-nav">
             <li className="header-nav-item active-item" onClick={() => setIsMessageActive(false)}>
               <span className="header-list-name">
-                <FaRegBell className="header-list-icon" onClick={() => setIsMessageActive(true)} />
+                <FaRegBell className="header-list-icon" />
                 {/* {notificationCount > 0 && ( */}
                 <span className="bg-danger-dots dots" data-testid="notification-dots">
                   {/* {notificationCount} */}
@@ -95,7 +90,7 @@ const Header = () => {
             <li data-testid="message-list-item" className="header-nav-item active-item">
               {' '}
               <span className="header-list-name">
-                <FaRegEnvelope className="header-list-icon" />
+                <FaRegEnvelope className="header-list-icon" onClick={() => setIsMessageActive(true)} />
                 {messageCount > 0 && <span className="bg-danger-dots dots" data-testid="messages-dots"></span>}
               </span>
               &nbsp;
