@@ -5,13 +5,17 @@ import { Avatar } from '../avatar/Avatar';
 import { FaCaretDown, FaCaretUp, FaRegBell, FaRegEnvelope } from 'react-icons/fa';
 import { Utils } from 'src/services/utils/utilsService';
 import { useDetectOutsideClick } from 'src/hooks/useDetectOutsideClick';
+import MessageSideBar from '../message-sidebar/MessageSideBar';
+import { useSelector } from 'react-redux';
 
 const logo = 'LOGO';
 const messageCount = 10;
 
 const Header = () => {
+  const { profile } = useSelector((state) => state.user);
   const [environment, setEnvironment] = useState('');
   const messageRef = useRef();
+  // eslint-disable-next-line no-unused-vars
   const [isMessageActive, setIsMessageActive] = useDetectOutsideClick(messageRef, false);
   const navigate = useNavigate();
 
@@ -22,9 +26,21 @@ const Header = () => {
     const env = Utils.appEnvironment();
     setEnvironment(env);
   }, []);
+
+  const openChatPage = () => {};
   return (
     <>
       <div className="header-nav-wrapper" data-testid="header-wrapper">
+        {isMessageActive && (
+          <div ref={messageRef}>
+            <MessageSideBar
+              profile={profile}
+              messageCount={0}
+              messageNotifications={'hghghghg'}
+              openChatPage={openChatPage}
+            />
+          </div>
+        )}
         <div className="header-navbar">
           <div className="header-image" data-testid="header-image" onClick={() => navigate('/app/social/streams')}>
             <img src={logo} className="img-fluid" alt="" />
