@@ -3,6 +3,9 @@ import doubleCheckmark from '@assets/images/double-checkmark.png';
 import Avatar from '@components/avatar/Avatar';
 import PropTypes from 'prop-types';
 import { FaCheck, FaCircle } from 'react-icons/fa';
+import { Utils } from 'src/services/utils/utilsService';
+
+import '@components/message-sidebar/MessageSideBar.scss';
 
 const MessageSideBar = ({ profile, messageCount, messageNotifications, openChatPage }) => {
   return (

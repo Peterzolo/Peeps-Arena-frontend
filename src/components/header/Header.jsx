@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '@components/header/Header.scss';
 import { Avatar } from '../avatar/Avatar';
 import { FaCaretDown, FaCaretUp, FaRegBell, FaRegEnvelope } from 'react-icons/fa';
 import { Utils } from 'src/services/utils/utilsService';
+import { useDetectOutsideClick } from 'src/hooks/useDetectOutsideClick';
 
 const logo = 'LOGO';
 const messageCount = 10;
 
 const Header = () => {
   const [environment, setEnvironment] = useState('');
+  const messageRef = useRef();
+  const [isMessageActive, setIsMessageActive] = useDetectOutsideClick(messageRef, false);
   const navigate = useNavigate();
 
   const backgrounColor = `${
