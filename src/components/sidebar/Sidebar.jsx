@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { sideBarItems, fontAwesomeIcons } from '@services/utils/static.data';
-import '@components/sidebar/Sidebar.scss';
 import { useLocation, createSearchParams, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import '@components/sidebar/Sidebar.scss';
 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
   const { profile } = useSelector((state) => state.user);
-
-  console.log('PROFILE', profile);
 
   const checkUrl = (name) => {
     return location.pathname.includes(name.toLowerCase());

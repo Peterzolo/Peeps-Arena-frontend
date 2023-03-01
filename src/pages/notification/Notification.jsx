@@ -1,8 +1,7 @@
 import React from 'react';
-import '@pages/notification/Notification.scss';
 
 const Notification = () => {
-  return <div>Notifications</div>;
+  return <div>New Notification</div>;
 };
 
 export default Notification;

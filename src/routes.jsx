@@ -2,13 +2,14 @@ import { useRoutes } from 'react-router-dom';
 import { ForgotPassword, Login, PasswordReset, Register } from '@pages/auth/index';
 import Streams from '@pages/social/streams/Streams';
 import Social from '@pages/social/Social';
-import Chart from './pages/chart/Chart';
 import People from './pages/people/People';
 import Followers from './pages/followers/Followers';
 import Following from './pages/following/Following';
-import Notification from './pages/notification/Notification';
 import Photos from './pages/photos/Photos';
 import Profile from './pages/profile/Profile';
+import Videos from './pages/videos/Videos';
+import Notification from './pages/notification/Notification';
+import Chat from './pages/chat/Chat';
 
 export const AppRouter = () => {
   const elements = useRoutes([
@@ -36,9 +37,10 @@ export const AppRouter = () => {
         { path: 'people', element: <People /> },
         { path: 'followers', element: <Followers /> },
         { path: 'following', element: <Following /> },
-        { path: 'notification', element: <Notification /> },
-        { path: 'chat/message', element: <Chart /> },
+        { path: 'notifications', element: <Notification /> },
+        { path: 'chat/messages', element: <Chat /> },
         { path: 'photos', element: <Photos /> },
+        { path: 'videos', element: <Videos /> },
         { path: 'profile', element: <Profile /> },
         { path: 'profile/:username', element: <Profile /> }
       ]
