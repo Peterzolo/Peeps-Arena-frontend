@@ -296,7 +296,7 @@ const Header = () => {
                         notificationCount={0}
                         title="Settings"
                         onLogout={onLogout}
-                        onNavigate={() => ProfileUtils.navigateToProfile(profile, navigate)}
+                        // onNavigate={() => ProfileUtils.navigateToProfile(profile, navigate)}
                       />
                     </li>
                   </ul>
