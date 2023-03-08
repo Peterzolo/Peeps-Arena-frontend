@@ -9,7 +9,8 @@ import useDetectOutsideClick from '@hooks/useDetectOutsideClick';
 import { createSearchParams, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Dropdown from '@components/dropdown/Dropdown';
-import { useEffectOnce } from 'src/hooks/useEffectOnce';
+import { useEffectOnce } from '@hooks/useEffectOnce';
+import MessageSideBar from '../message-sidebar/MessageSideBar';
 // import MessageSidebar from '@components/message-sidebar/MessageSidebar';
 // import useEffectOnce from '@hooks/useEffectOnce';
 // import { ProfileUtils } from '@services/utils/profile-utils.service';
@@ -28,7 +29,7 @@ import { useEffectOnce } from 'src/hooks/useEffectOnce';
 
 const Header = () => {
   const { profile } = useSelector((state) => state.user);
-  const { chatList } = useSelector((state) => state.chat);
+  // const { chatList } = useSelector((state) => state.chat);
   const [environment, setEnvironment] = useState('');
   const [settings, setSettings] = useState([]);
   const [notifications, setNotifications] = useState([]);
@@ -40,13 +41,17 @@ const Header = () => {
     reaction: '',
     senderName: ''
   });
+  // eslint-disable-next-line no-unused-vars
   const [messageCount, setMessageCount] = useState(0);
+  // eslint-disable-next-line no-unused-vars
   const [messageNotifications, setMessageNotifications] = useState([]);
   const messageRef = useRef(null);
   const notificationRef = useRef(null);
   const settingsRef = useRef(null);
   const navigate = useNavigate();
+  // eslint-disable-next-line no-unused-vars
   const dispatch = useDispatch();
+  // eslint-disable-next-line no-unused-vars
   const location = useLocation();
   const [isMessageActive, setIsMessageActive] = useDetectOutsideClick(messageRef, false);
   const [isNotificationActive, setIsNotificationActive] = useDetectOutsideClick(notificationRef, false);
@@ -130,27 +135,27 @@ const Header = () => {
     getUserNotifications();
   });
 
-  useEffect(() => {
-    const env = Utils.appEnvironment();
-    setEnvironment(env);
-    const count = sumBy(chatList, (notification) => {
-      return !notification.isRead && notification.receiverUsername === profile?.username ? 1 : 0;
-    });
-    setMessageCount(count);
-    setMessageNotifications(chatList);
-  }, [chatList, profile]);
+  // useEffect(() => {
+  //   const env = Utils.appEnvironment();
+  //   setEnvironment(env);
+  //   const count = sumBy(chatList, (notification) => {
+  //     return !notification.isRead && notification.receiverUsername === profile?.username ? 1 : 0;
+  //   });
+  //   setMessageCount(count);
+  //   setMessageNotifications(chatList);
+  // }, [chatList, profile]);
 
-  useEffect(() => {
-    NotificationUtils.socketIONotification(profile, notifications, setNotifications, 'header', setNotificationCount);
-    NotificationUtils.socketIOMessageNotification(
-      profile,
-      messageNotifications,
-      setMessageNotifications,
-      setMessageCount,
-      dispatch,
-      location
-    );
-  }, [profile, notifications, dispatch, location, messageNotifications]);
+  // useEffect(() => {
+  //   NotificationUtils.socketIONotification(profile, notifications, setNotifications, 'header', setNotificationCount);
+  //   NotificationUtils.socketIOMessageNotification(
+  //     profile,
+  //     messageNotifications,
+  //     setMessageNotifications,
+  //     setMessageCount,
+  //     dispatch,
+  //     location
+  //   );
+  // }, [profile, notifications, dispatch, location, messageNotifications]);
 
   return (
     <>
@@ -160,7 +165,7 @@ const Header = () => {
         <div className="header-nav-wrapper" data-testid="header-wrapper">
           {isMessageActive && (
             <div ref={messageRef}>
-              <MessageSidebar
+              <MessageSideBar
                 profile={profile}
                 messageCount={messageCount}
                 messageNotifications={messageNotifications}
