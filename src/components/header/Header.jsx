@@ -17,7 +17,7 @@ const Header = () => {
   const [environment, setEnvironment] = useState('');
   const messageRef = useRef();
   const notificationRef = useRef();
-  // eslint-disable-next-line no-unused-vars
+  const navigate = useNavigate();
   const [notifications, setNotifications] = useState([]);
   const [notificationCount, setNotificationCount] = useState(0);
   const [isMessageActive, setIsMessageActive] = useDetectOutsideClick(messageRef, false);
@@ -32,6 +32,9 @@ const Header = () => {
   }, []);
 
   const openChatPage = () => {};
+
+  const onMarkAsRead = async (notification) => {};
+  const onDeleteNotification = async (notification) => {};
 
   return (
     <>
@@ -63,11 +66,11 @@ const Header = () => {
             <li className="header-nav-item active-item" onClick={() => setIsMessageActive(false)}>
               <span className="header-list-name">
                 <FaRegBell className="header-list-icon" />
-                {/* {notificationCount > 0 && ( */}
-                <span className="bg-danger-dots dots" data-testid="notification-dots">
-                  {/* {notificationCount} */}
-                </span>
-                {/* )} */}
+                {notificationCount > 0 && (
+                  <span className="bg-danger-dots dots" data-testid="notification-dots">
+                    {notificationCount}
+                  </span>
+                )}
               </span>
               {isNotificationActive && (
                 <ul className="dropdown-ul" ref={notificationRef}>
@@ -87,7 +90,6 @@ const Header = () => {
               &nbsp;
             </li>
 
-            {/* ////////////// */}
             <li data-testid="message-list-item" className="header-nav-item active-item">
               {' '}
               <span className="header-list-name">
@@ -97,13 +99,12 @@ const Header = () => {
               &nbsp;
             </li>
 
-            {/* /////////// */}
             <li data-testid="settings-list-item" className="header-nav-item">
               <span className="header-list-name profile-image">
                 <Avatar
                   name={profile?.username}
                   bgColor={profile?.avatarColor}
-                  textColor="#0a9b3b"
+                  textColor="#c5e4cf"
                   size={40}
                   avatarSrc={profile?.profilePicture}
                 />
@@ -120,8 +121,7 @@ const Header = () => {
               {/* <ul className="dropdown-ul" ref={settingsRef}> */}
               <ul className="dropdown-ul">
                 <li className="dropdown-li">
-                  {/* <Dropdown */}
-                  <div
+                  <Dropdown
                     height={300}
                     style={{ right: '150px', top: '40px' }}
                     // data={settings}
