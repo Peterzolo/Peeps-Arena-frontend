@@ -7,6 +7,7 @@ import { Utils } from 'src/services/utils/utilsService';
 import { useDetectOutsideClick } from 'src/hooks/useDetectOutsideClick';
 import MessageSideBar from '../message-sidebar/MessageSideBar';
 import { useSelector } from 'react-redux';
+import { Dropdown } from 'react-bootstrap';
 
 const logo = 'LOGO';
 const messageCount = 10;
@@ -15,7 +16,10 @@ const Header = () => {
   const { profile } = useSelector((state) => state.user);
   const [environment, setEnvironment] = useState('');
   const messageRef = useRef();
+  const notificationRef = useRef();
   // eslint-disable-next-line no-unused-vars
+  const [notifications, setNotifications] = useState([]);
+  const [notificationCount, setNotificationCount] = useState(0);
   const [isMessageActive, setIsMessageActive] = useDetectOutsideClick(messageRef, false);
   const [isNotificationActive, setIsNotificationActive] = useDetectOutsideClick(notificationRef, false);
 
@@ -55,7 +59,6 @@ const Header = () => {
             <span className="bar"></span>
           </div>
 
-          {/* //////////// */}
           <ul className="header-nav">
             <li className="header-nav-item active-item" onClick={() => setIsMessageActive(false)}>
               <span className="header-list-name">
@@ -66,24 +69,21 @@ const Header = () => {
                 </span>
                 {/* )} */}
               </span>
-              {/* {isNotificationActive && ( */}
-              {/* <ul className="dropdown-ul" ref={notificationRef}> */}
-              <ul className="dropdown-ul">
-                <li className="dropdown-li">
-                  {/* <Dropdown */}
-                  <div
-                    // tobe changed
-                    height={300}
-                    style={{ right: '250px', top: '20px' }}
-                    // data={notifications}
-                    // notificationCount={notificationCount}
-                    title="Notifications"
-                    // onMarkAsRead={onMarkAsRead}
-                    // onDeleteNotification={onDeleteNotification}
-                  />
-                </li>
-              </ul>
-              {/* )} */}
+              {isNotificationActive && (
+                <ul className="dropdown-ul" ref={notificationRef}>
+                  <li className="dropdown-li">
+                    <Dropdown
+                      height={300}
+                      style={{ right: '250px', top: '20px' }}
+                      data={notifications}
+                      notificationCount={notificationCount}
+                      title="Notifications"
+                      onMarkAsRead={onMarkAsRead}
+                      onDeleteNotification={onDeleteNotification}
+                    />
+                  </li>
+                </ul>
+              )}
               &nbsp;
             </li>
 
