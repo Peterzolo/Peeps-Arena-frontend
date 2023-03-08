@@ -17,7 +17,7 @@ const Header = () => {
   const messageRef = useRef();
   // eslint-disable-next-line no-unused-vars
   const [isMessageActive, setIsMessageActive] = useDetectOutsideClick(messageRef, false);
-  const navigate = useNavigate();
+  const [isNotificationActive, setIsNotificationActive] = useDetectOutsideClick(notificationRef, false);
 
   const backgrounColor = `${
     environment === 'DEV' || environment === 'LOCAL' ? '#50b5ff' : environment === 'STG' ? '#e9710f' : ''
