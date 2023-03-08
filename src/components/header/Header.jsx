@@ -4,26 +4,27 @@ import { FaCaretDown, FaCaretUp, FaRegBell, FaRegEnvelope } from 'react-icons/fa
 
 import '@components/header/Header.scss';
 import Avatar from '@components/avatar/Avatar';
-import { Utils } from '@services/utils/utils.service';
+import { Utils } from '@services/utils/utilsService';
 import useDetectOutsideClick from '@hooks/useDetectOutsideClick';
-import MessageSidebar from '@components/message-sidebar/MessageSidebar';
+import { createSearchParams, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Dropdown from '@components/dropdown/Dropdown';
-import useEffectOnce from '@hooks/useEffectOnce';
-import { ProfileUtils } from '@services/utils/profile-utils.service';
-import { createSearchParams, useLocation, useNavigate } from 'react-router-dom';
-import useLocalStorage from '@hooks/useLocalStorage';
-import useSessionStorage from '@hooks/useSessionStorage';
-import { userService } from '@services/api/user/user.service';
-import HeaderSkeleton from '@components/header/HeaderSkeleton';
-import { notificationService } from '@services/api/notifications/notification.service';
-import { NotificationUtils } from '@services/utils/notification-utils.service';
-import NotificationPreview from '@components/dialog/NotificationPreview';
-import { socketService } from '@services/socket/socket.service';
-import { sumBy } from 'lodash';
-import { ChatUtils } from '@services/utils/chat-utils.service';
-import { chatService } from '@services/api/chat/chat.service';
-import { getConversationList } from '@redux/api/chat';
+import { useEffectOnce } from 'src/hooks/useEffectOnce';
+// import MessageSidebar from '@components/message-sidebar/MessageSidebar';
+// import useEffectOnce from '@hooks/useEffectOnce';
+// import { ProfileUtils } from '@services/utils/profile-utils.service';
+// import useLocalStorage from '@hooks/useLocalStorage';
+// import useSessionStorage from '@hooks/useSessionStorage';
+// import { userService } from '@services/api/user/user.service';
+// import HeaderSkeleton from '@components/header/HeaderSkeleton';
+// import { notificationService } from '@services/api/notifications/notification.service';
+// import { NotificationUtils } from '@services/utils/notification-utils.service';
+// import NotificationPreview from '@components/dialog/NotificationPreview';
+// import { socketService } from '@services/socket/socket.service';
+// import { sumBy } from 'lodash';
+// import { ChatUtils } from '@services/utils/chat-utils.service';
+// import { chatService } from '@services/api/chat/chat.service';
+// import { getConversationList } from '@redux/api/chat';
 
 const Header = () => {
   const { profile } = useSelector((state) => state.user);
@@ -50,78 +51,78 @@ const Header = () => {
   const [isMessageActive, setIsMessageActive] = useDetectOutsideClick(messageRef, false);
   const [isNotificationActive, setIsNotificationActive] = useDetectOutsideClick(notificationRef, false);
   const [isSettingsActive, setIsSettingsActive] = useDetectOutsideClick(settingsRef, false);
-  const storedUsername = useLocalStorage('username', 'get');
-  const [deleteStorageUsername] = useLocalStorage('username', 'delete');
-  const [setLoggedIn] = useLocalStorage('keepLoggedIn', 'set');
-  const [deleteSessionPageReload] = useSessionStorage('pageReload', 'delete');
+  // const storedUsername = useLocalStorage('username', 'get');
+  // const [deleteStorageUsername] = useLocalStorage('username', 'delete');
+  // const [setLoggedIn] = useLocalStorage('keepLoggedIn', 'set');
+  // const [deleteSessionPageReload] = useSessionStorage('pageReload', 'delete');
 
   const backgrounColor = `${
     environment === 'DEV' || environment === 'LOCAL' ? '#50b5ff' : environment === 'STG' ? '#e9710f' : ''
   }`;
 
   const getUserNotifications = async () => {
-    try {
-      const response = await notificationService.getUserNotifications();
-      const mappedNotifications = NotificationUtils.mapNotificationDropdownItems(
-        response.data.notifications,
-        setNotificationCount
-      );
-      setNotifications(mappedNotifications);
-      socketService?.socket.emit('setup', { userId: storedUsername });
-    } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
-    }
+    // try {
+    //   const response = await notificationService.getUserNotifications();
+    //   const mappedNotifications = NotificationUtils.mapNotificationDropdownItems(
+    //     response.data.notifications,
+    //     setNotificationCount
+    //   );
+    //   setNotifications(mappedNotifications);
+    //   socketService?.socket.emit('setup', { userId: storedUsername });
+    // } catch (error) {
+    //   Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+    // }
   };
 
   const onMarkAsRead = async (notification) => {
-    try {
-      NotificationUtils.markMessageAsRead(notification?._id, notification, setNotificationDialogContent);
-    } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
-    }
+    // try {
+    //   NotificationUtils.markMessageAsRead(notification?._id, notification, setNotificationDialogContent);
+    // } catch (error) {
+    //   Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+    // }
   };
 
   const onDeleteNotification = async (messageId) => {
-    try {
-      const response = await notificationService.deleteNotification(messageId);
-      Utils.dispatchNotification(response.data.message, 'success', dispatch);
-    } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
-    }
+    // try {
+    //   const response = await notificationService.deleteNotification(messageId);
+    //   Utils.dispatchNotification(response.data.message, 'success', dispatch);
+    // } catch (error) {
+    //   Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+    // }
   };
 
   const openChatPage = async (notification) => {
-    try {
-      const params = ChatUtils.chatUrlParams(notification, profile);
-      ChatUtils.joinRoomEvent(notification, profile);
-      ChatUtils.privateChatMessages = [];
-      const receiverId =
-        notification?.receiverUsername !== profile?.username ? notification?.receiverId : notification?.senderId;
-      if (notification?.receiverUsername === profile?.username && !notification.isRead) {
-        await chatService.markMessagesAsRead(profile?._id, receiverId);
-      }
-      const userTwoName =
-        notification?.receiverUsername !== profile?.username
-          ? notification?.receiverUsername
-          : notification?.senderUsername;
-      await chatService.addChatUsers({ userOne: profile?.username, userTwo: userTwoName });
-      navigate(`/app/social/chat/messages?${createSearchParams(params)}`);
-      setIsMessageActive(false);
-      dispatch(getConversationList());
-    } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
-    }
+    // try {
+    //   const params = ChatUtils.chatUrlParams(notification, profile);
+    //   ChatUtils.joinRoomEvent(notification, profile);
+    //   ChatUtils.privateChatMessages = [];
+    //   const receiverId =
+    //     notification?.receiverUsername !== profile?.username ? notification?.receiverId : notification?.senderId;
+    //   if (notification?.receiverUsername === profile?.username && !notification.isRead) {
+    //     await chatService.markMessagesAsRead(profile?._id, receiverId);
+    //   }
+    //   const userTwoName =
+    //     notification?.receiverUsername !== profile?.username
+    //       ? notification?.receiverUsername
+    //       : notification?.senderUsername;
+    //   await chatService.addChatUsers({ userOne: profile?.username, userTwo: userTwoName });
+    //   navigate(`/app/social/chat/messages?${createSearchParams(params)}`);
+    //   setIsMessageActive(false);
+    //   dispatch(getConversationList());
+    // } catch (error) {
+    //   Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+    // }
   };
 
   const onLogout = async () => {
-    try {
-      setLoggedIn(false);
-      Utils.clearStore({ dispatch, deleteStorageUsername, deleteSessionPageReload, setLoggedIn });
-      await userService.logoutUser();
-      navigate('/');
-    } catch (error) {
-      Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
-    }
+    // try {
+    //   setLoggedIn(false);
+    //   Utils.clearStore({ dispatch, deleteStorageUsername, deleteSessionPageReload, setLoggedIn });
+    //   await userService.logoutUser();
+    //   navigate('/');
+    // } catch (error) {
+    //   Utils.dispatchNotification(error.response.data.message, 'error', dispatch);
+    // }
   };
 
   useEffectOnce(() => {
