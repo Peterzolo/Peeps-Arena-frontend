@@ -100,7 +100,13 @@ const Header = () => {
             {/* /////////// */}
             <li data-testid="settings-list-item" className="header-nav-item">
               <span className="header-list-name profile-image">
-                <Avatar name="Peeps" bgColor="#0b54e6" textColor="#e9f3ed" size={40} avatarSrc="" />
+                <Avatar
+                  name={profile?.username}
+                  bgColor={profile?.avatarColor}
+                  textColor="#0a9b3b"
+                  size={40}
+                  avatarSrc={profile?.profilePicture}
+                />
               </span>
               <span className="header-list-name profile-name">
                 {/* {profile?.username} */}
