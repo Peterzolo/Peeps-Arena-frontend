@@ -28,6 +28,7 @@ const Header = () => {
   }, []);
 
   const openChatPage = () => {};
+
   return (
     <>
       <div className="header-nav-wrapper" data-testid="header-wrapper">
