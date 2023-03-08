@@ -1,10 +1,10 @@
-import Avatar from '@components/avatar/Avatar';
-import Button from '@components/button/Button';
+import { Avatar } from '@components/avatar/Avatar';
+import { Button } from '@components/Button/Button';
 import PropTypes from 'prop-types';
 import { FaCircle, FaRegCircle, FaTrashAlt, FaUserAlt } from 'react-icons/fa';
 
 import '@components/dropdown/Dropdown.scss';
-import { Utils } from '@services/utils/utils.service';
+import { Utils } from '@services/utils/utilsService';
 
 const Dropdown = ({
   data,

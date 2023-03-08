@@ -3,14 +3,18 @@ import logo from '@assets/images/logo.svg';
 import { FaCaretDown, FaCaretUp, FaRegBell, FaRegEnvelope } from 'react-icons/fa';
 
 import '@components/header/Header.scss';
-import Avatar from '@components/avatar/Avatar';
+import { Avatar } from '@components/avatar/Avatar';
+// eslint-disable-next-line no-unused-vars
 import { Utils } from '@services/utils/utilsService';
-import useDetectOutsideClick from '@hooks/useDetectOutsideClick';
+import { useDetectOutsideClick } from '@hooks/useDetectOutsideClick';
+// eslint-disable-next-line no-unused-vars
 import { createSearchParams, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Dropdown from '@components/dropdown/Dropdown';
+// eslint-disable-next-line no-unused-vars
 import { useEffectOnce } from '@hooks/useEffectOnce';
 import MessageSideBar from '../message-sidebar/MessageSideBar';
+import NotificationPreview from '../dialog/notification-preview/NotificationPreview';
 // import MessageSidebar from '@components/message-sidebar/MessageSidebar';
 // import useEffectOnce from '@hooks/useEffectOnce';
 // import { ProfileUtils } from '@services/utils/profile-utils.service';
@@ -30,9 +34,13 @@ import MessageSideBar from '../message-sidebar/MessageSideBar';
 const Header = () => {
   const { profile } = useSelector((state) => state.user);
   // const { chatList } = useSelector((state) => state.chat);
+  // eslint-disable-next-line no-unused-vars
   const [environment, setEnvironment] = useState('');
+  // eslint-disable-next-line no-unused-vars
   const [settings, setSettings] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [notifications, setNotifications] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [notificationCount, setNotificationCount] = useState(0);
   const [notificationDialogContent, setNotificationDialogContent] = useState({
     post: '',
@@ -65,6 +73,7 @@ const Header = () => {
     environment === 'DEV' || environment === 'LOCAL' ? '#50b5ff' : environment === 'STG' ? '#e9710f' : ''
   }`;
 
+  // eslint-disable-next-line no-unused-vars
   const getUserNotifications = async () => {
     // try {
     //   const response = await notificationService.getUserNotifications();
@@ -130,10 +139,10 @@ const Header = () => {
     // }
   };
 
-  useEffectOnce(() => {
-    Utils.mapSettingsDropdownItems(setSettings);
-    getUserNotifications();
-  });
+  // useEffectOnce(() => {
+  //   Utils.mapSettingsDropdownItems(setSettings);
+  //   getUserNotifications();
+  // });
 
   // useEffect(() => {
   //   const env = Utils.appEnvironment();
@@ -144,6 +153,8 @@ const Header = () => {
   //   setMessageCount(count);
   //   setMessageNotifications(chatList);
   // }, [chatList, profile]);
+
+  useEffect(() => {});
 
   // useEffect(() => {
   //   NotificationUtils.socketIONotification(profile, notifications, setNotifications, 'header', setNotificationCount);
@@ -160,7 +171,8 @@ const Header = () => {
   return (
     <>
       {!profile ? (
-        <HeaderSkeleton />
+        // <HeaderSkeleton />
+        <div />
       ) : (
         <div className="header-nav-wrapper" data-testid="header-wrapper">
           {isMessageActive && (
